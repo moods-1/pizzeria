@@ -1,9 +1,9 @@
 import React from 'react';
-import Pizza1 from '../images/arugulaProsciutto.png';
-import Pizza2 from '../images/arugulaProsciutto.png';
-import Pizza3 from '../images/arugulaCheese.png';
-import Man from '../images/manSmiling.jpg';
-import Woman from '../images/womanSmiling.jpg';
+import Pizza1 from '../images/arugulaProsciutto.webp';
+import Pizza2 from '../images/figGoatCheese.webp';
+import Pizza3 from '../images/arugulaCheese.webp';
+import Man from '../images/manSmiling.webp';
+import Woman from '../images/womanSmiling.webp';
 
 const Home =()=>{
  
@@ -24,8 +24,9 @@ const Home =()=>{
                     <p>Originally created for a special guest, and instantly became a classic.</p>
                 </div>
                 <div className="gallery-box">
-                    <p>Prosciutto</p>
-                    <img src={Pizza1} alt="leftPizza"/>
+                    <p>Figaro</p>
+                    <img src={Pizza2} alt="leftPizza"/>
+                    <p>Delightfully sweet, yet not overpowering.</p>
                 </div>
                 <div className="gallery-box" id="optional-gallery-box">
                     <p>Verde Minimalista</p>

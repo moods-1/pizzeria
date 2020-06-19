@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import '../main.css';
+import '../styles/main.css';
 
 export default class Login extends Component{
     state={
@@ -8,7 +8,7 @@ export default class Login extends Component{
     render(){
     
         return(
-            <h1>Login Page</h1>
+            <h1 style={{color: "white", textAlign: "center"}}>Cart Page</h1>
         )
     }
 }

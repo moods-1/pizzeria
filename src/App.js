@@ -1,12 +1,11 @@
 import React from 'react';
-import './main.css';
+import './styles/main.css';
 import Header from './components/header';
 import Home from './components/home';
 import Menu from './components/menu';
 import About from './components/about';
 import Login from './components/login';
 import Footer from './components/footer'
-
 // eslint-disable-next-line
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 

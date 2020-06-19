@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import '../main.css';
+import '../styles/main.css';
 
 export default class About extends Component{
     state={

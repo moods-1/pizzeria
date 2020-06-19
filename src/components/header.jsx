@@ -1,8 +1,9 @@
 import React ,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import burger from '../images/burger.png';
-import fries from '../images/fries.png'
-import '../main.css';
+import fries from '../images/fries.png';
+import cart from '../images/shoppingCart.webp';
+import '../styles/main.css';
 
 export default class Header extends Component{
     state={
@@ -49,7 +50,9 @@ export default class Header extends Component{
                             <li className="nav-list-item">About</li>
                         </Link>
                         <Link to="/login" style={{ textDecoration: 'none' }}>
-                            <li className="nav-list-item">Login</li>
+                            <li className="nav-list-item">
+                                <img src={cart} alt="cart" id="cart"/>
+                            </li>
                         </Link>
                     </ul>
                 </nav>
