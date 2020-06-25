@@ -1,0 +1,13 @@
+document.querySelector('.nav-list').classList.toggle('nav-shift');
+            document.querySelectorAll('.nav-list li').forEach((link, index) =>{
+                if(link.style.animation){
+                    link.style.animation = '';
+                }
+                else{
+                    link.style.animation = `navEaseIn 0.5s ease forwards ${index / 7 + 0.5}s`;
+                }
+            })
+            document.querySelectorAll('.nav-list li').forEach(link =>{
+                link.addEventListener('click', () =>{
+                    document.querySelector('.nav-list').classList.toggle('nav-shift');
+                    this.setState({burgerTracker: !this.state.burgerTracker})

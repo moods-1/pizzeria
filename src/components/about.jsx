@@ -27,11 +27,11 @@ export default class About extends Component{
                             title="moodi"
                             width="800" 
                             height="400" 
-                            frameborder="0" 
+                            frameBorder="0" 
                             style={{border:0}} 
-                            allowfullscreen="" 
+                            allowFullScreen="" 
                             aria-hidden="false" 
-                            tabindex="0"
+                            tabIndex="0"
                         />
                     </div>
                     <div className="address-box" style={{textAlign: "center"}}>

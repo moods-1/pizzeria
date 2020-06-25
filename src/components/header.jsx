@@ -2,7 +2,7 @@ import React ,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import burger from '../images/burger.png';
 import fries from '../images/fries.png';
-import cart from '../images/shoppingCart.webp';
+import {ProductConsumer} from '../backend/contextAPI';
 import '../styles/main.css';
 
 export default class Header extends Component{
@@ -38,30 +38,37 @@ export default class Header extends Component{
         return(
             <header>
                 <h1>Pizzeria Moodi</h1>
-                <nav className="horizontal-nav">
-                    <ul className="nav-list" onClick={this.handleLink}>
-                        <Link to='/' style={{ textDecoration: 'none' }}>
-                            <li className="nav-list-item">Home</li>
-                        </Link>
-                        <Link to="/menu" style={{ textDecoration: 'none' }}>
-                            <li className="nav-list-item">Menu</li>
-                        </Link>
-                        <Link to="/about" style={{ textDecoration: 'none' }}>
-                            <li className="nav-list-item">About</li>
-                        </Link>
-                        <Link to="/login" style={{ textDecoration: 'none' }}>
-                            <li className="nav-list-item">
-                                <img src={cart} alt="cart" id="cart"/>
-                            </li>
-                        </Link>
-                    </ul>
-                </nav>
-                <div 
-                    className="burger-box d-none"
-                    onClick={this.burgerToggle}
-                >
-                    <img src={burgerSource} alt="burger" />
-                </div>
+                    <nav className="horizontal-nav">
+                        <ul className="nav-list" onClick={this.handleLink}>
+                            <Link to='/' style={{ textDecoration: 'none' }}>
+                                <li className="nav-list-item">Home</li>
+                            </Link>
+                            <Link to="/menu" style={{ textDecoration: 'none' }}>
+                                <li className="nav-list-item">Menu</li>
+                            </Link>
+                            <Link to="/about" style={{ textDecoration: 'none' }}>
+                                <li className="nav-list-item">About</li>
+                            </Link>
+                            <ProductConsumer>
+                                {value=>{
+                                    return( 
+                                        <Link to="/cart" style={{ textDecoration: 'none'}}>
+                                            <li 
+                                                className="nav-list-item">
+                                                Cart ({value.cart.length})
+                                            </li>
+                                        </Link>
+                                    )
+                            }}
+                            </ProductConsumer>
+                        </ul>
+                    </nav>
+                    <div 
+                        className="burger-box d-none"
+                        onClick={this.burgerToggle}
+                    >
+                        <img src={burgerSource} alt="burger" />
+                    </div>
             </header>
         )
         
