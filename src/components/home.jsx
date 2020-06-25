@@ -1,12 +1,12 @@
-import React from 'react';
-import Pizza1 from '../images/arugulaProsciutto.webp';
-import Pizza2 from '../images/figGoatCheese.webp';
-import Pizza3 from '../images/arugulaCheese.webp';
+import React,{useEffect} from 'react';
 import Man from '../images/manSmiling.webp';
 import Woman from '../images/womanSmiling.webp';
+import data from '../backend/data';
 
 const Home =()=>{
- 
+    
+    useEffect(()=>document.querySelector('.home-gallery').lastChild.classList.add('optional-gallery-box'));
+   
     return(
         <div className="home-main-container">
             <div className="home-showcase">
@@ -18,21 +18,13 @@ const Home =()=>{
             </div>
             <div className="home-gallery">
                 <h1>Favourites</h1>
-                <div className="gallery-box">
-                    <p>De Niro Prosciutto</p>
-                    <img src={Pizza1} alt="leftPizza"/>
-                    <p>Originally created for a special guest, and instantly became a classic.</p>
-                </div>
-                <div className="gallery-box">
-                    <p>Figaro</p>
-                    <img src={Pizza2} alt="leftPizza"/>
-                    <p>Delightfully sweet, yet not overpowering.</p>
-                </div>
-                <div className="gallery-box" id="optional-gallery-box">
-                    <p>Verde Minimalista</p>
-                    <img src={Pizza3} alt="leftPizza"/>
-                    <p>Light on ingredients, but delivers a powerful burst of flavour.</p>
-                </div>
+                {data.products.slice(0,3).map(product =>
+                    <div key={product.id} className="gallery-box">
+                        <p>{product.name}</p>
+                        <img src={product.image} alt="pizza" />
+                        <p>{product.story}</p>
+                    </div>
+                )}
             </div>
             <div className="profile-gallery">
                 <h1>Testimonials</h1>

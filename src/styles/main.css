@@ -61,6 +61,9 @@ nav{
   width: 35px;
   height: 30px;
 }
+#cart-value{
+  margin-left:15px;
+}
 .home-showcase{
   width: 100vw;
   height: 50vh;
@@ -134,11 +137,12 @@ nav{
   width: auto;
   height: 370px;
   padding: 10px;
-  /*border: rgba(204, 202, 202, 0.527) solid 1px;
-  border-radius: 10px;
-  box-shadow: 2px 1px 10px rgba(248, 245, 245, 0.609);*/
+  overflow: hidden;
   justify-content: center;
   text-align: center;
+  border: rgba(204, 202, 202, 0.9) solid 1px;
+  border-radius: 10px;
+  box-shadow: 2px 1px 10px rgba(54, 54, 54, 0.4);
 }
 .gallery-box:hover{
   transform: scale(1.05);
@@ -279,8 +283,11 @@ nav{
       transform: translateX(10px);
     }
   }
-  #optional-gallery-box{
+  .optional-gallery-box{
     display: none;
+  }
+  .gallery-box{
+    height: 330px;
   }
   .gallery-box img{
     width: 80%;
@@ -294,7 +301,6 @@ nav{
     padding-top: 40px;
     width: 90%;
     height: 80vh;
-    border: solid red 1px;
   }
   #story-box p{
     margin-bottom: 0px;
