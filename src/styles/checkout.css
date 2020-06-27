@@ -18,7 +18,7 @@
     align-items: center;   
     border-radius: 15px;
 }
-.d-none{
+.hide{
     display: none;
 }
 form{
@@ -88,19 +88,119 @@ form button:hover{
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: white;
     overflow: hidden;
 }
 .confirmation-box{
+    position: relative;
     width: 75%;
     min-height: 700px;
     height: auto;
     margin: auto;
     margin-top: 100px;
-    border: red solid 1px;
+    border: rgb(90, 88, 88) solid 1px;
 }
 .confirmation-header{
+    position: relative;
+    background-image: url('/images/sharingPizza.webp');
+    background-size: cover;
+    background-position: center;
+    height: 250px;   
+}
+.shadow-box{
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    color: white;
     text-align: center;
-    border: green solid 1px;
+    letter-spacing: 1.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+.confirmation-details-top{
+    padding: 30px 0;
+    text-align: center;
+}
+.confirmation-bottom-text-box{
+    padding: 30px 20px;
+}
+.confirmation-bottom-text-box p{
+    font-size: 20px;
+}
+.checkout-summary{
+    border-top: gray solid 1px;
+    border-bottom:gray solid 1px;
+    padding: 5px 20px;
+    display: grid;
+    /*grid-template-columns: 120px 140px 60px 30px;*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+}
+.checkout-summary img{
+    width: 120px;
+    height: 120px;
+}
+.checkout-total-box{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+#checkout-total-price{
+    display: flex;
+    flex-wrap: wrap;
+    width:320px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.checkout-total-title{
+    width: 160px;
+    text-align: right;
+}
+.checkout-total-money{
+    min-width: 100px;
+    width: auto;
+    text-align: right;
+}
+@media(max-width: 767px){
+    .outter-form-container{
+        min-height: 550px;
+        height: auto;
+        width : 100%;
+        margin-top: 100px;
+        border-radius: 0px;
+    }
+    form{
+        width: 95%;
+        height: 100%;
+    }
+    form h1{
+        font-size: 35px;
+    }
+    form input{
+        font-size: 26px
+    }
+    .confirmation-box{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .checkout-summary{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 5px 2px;
+    }
+    .checkout-summary img{
+        width: 100%;
+        height: 100%;
+    }
+    #checkout-total-price{
+        font-size: 22px;
+        font-weight: 500;
+    }
+    
 }

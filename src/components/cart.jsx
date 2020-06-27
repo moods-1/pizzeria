@@ -76,7 +76,7 @@ export default class Cart extends Component{
                                         <div id="cart-total-price">
                                             <div className="total-title">Subtotal total :</div>
                                             <div className="total-money">${(value.cartSubtotal).toFixed(2)}</div>
-                                            <div className="total-title">Taxes :</div>
+                                            <div className="total-title">GST/HST :</div>
                                             <div className="total-money">${(value.cartSubtotal * .13).toFixed(2)}</div>
                                             <div className="total-title">Order total :</div>
                                             <div className="total-money">${(value.cartSubtotal * 1.13).toFixed(2)}</div>

@@ -78,8 +78,9 @@ export default class CheckoutForm extends React.Component{
         e.preventDefault();
         const isValid = this.validator();
         if(isValid){
-            document.querySelector('.outter-form-container').classList.add('d-none');
-            document.getElementById('checkout-plus-box').classList.remove('d-none');
+            document.querySelector('.outter-form-container').classList.add('hide');
+            document.getElementById('checkout-plus-box').classList.remove('hide');
+            return <CheckoutPlus {...this.state}/>
         }
     }
 
@@ -120,10 +121,9 @@ export default class CheckoutForm extends React.Component{
                                     </div>
                             <button onClick={this.handleSubmit} 
                                     type="submit">Submit</button>
-                        </form>
-                    
+                        </form>   
                 </div>
-                <div className="" id="checkout-plus-box">
+                <div className="hide" id="checkout-plus-box">
                     <CheckoutPlus {...this.state}/>
                 </div>
             </div>

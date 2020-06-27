@@ -12,7 +12,7 @@ export default class Menu extends Component{
     render(){
         return(
             <div className="menu-main-container">
-                <h1 id="menu-title">Pies</h1>
+                <h1 id="menu-title">Pizzas</h1>
                 <ProductConsumer>
                     {value=>{
                         return value.products.map(product =>

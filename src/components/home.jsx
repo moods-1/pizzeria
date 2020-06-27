@@ -2,6 +2,8 @@ import React,{useEffect} from 'react';
 import Man from '../images/manSmiling.webp';
 import Woman from '../images/womanSmiling.webp';
 import data from '../backend/data';
+import {Link} from 'react-router-dom';
+import '../styles/main.css';
 
 const Home =()=>{
     
@@ -18,12 +20,14 @@ const Home =()=>{
             </div>
             <div className="home-gallery">
                 <h1>Favourites</h1>
-                {data.products.slice(0,3).map(product =>
+                {data.products.slice(0,3).map(product =>                    
                     <div key={product.id} className="gallery-box">
-                        <p>{product.name}</p>
-                        <img src={product.image} alt="pizza" />
+                        <p id="gallery-box-title">{product.name}</p>
+                        <Link to="/menu">
+                            <img src={product.image} alt="pizza" />
+                        </Link>
                         <p>{product.story}</p>
-                    </div>
+                    </div>                   
                 )}
             </div>
             <div className="profile-gallery">
@@ -36,14 +40,14 @@ const Home =()=>{
                     <span>- Susie Q.</span>
                 
                 </div>
-                <div className="profile-box">
-                    <img src={Man} alt="man" />
-                    <p>
-                        The pizza quality is superb, and the staff treat you like family! 
-                    </p><br />
-                    <span>- Dan J.</span>
-                </div>
-                
+               
+                    <div className="profile-box">
+                        <img src={Man} alt="man" />
+                        <p>
+                            The pizza quality is superb, and the staff treat you like family! 
+                        </p><br />
+                        <span>- Dan J.</span>
+                    </div>
             </div>
         </div>
     );  

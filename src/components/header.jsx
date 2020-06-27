@@ -9,6 +9,7 @@ export default class Header extends Component{
     state={
         burgerTracker: true,
     }
+    
     burgerToggle = e =>{
         this.setState({
             burgerTracker: !this.state.burgerTracker
@@ -31,10 +32,10 @@ export default class Header extends Component{
             }
         })
     }
-   
+    
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-        
+             
         return(
             <header>
                 <h1>Pizzeria Moodi</h1>
