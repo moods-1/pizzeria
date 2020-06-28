@@ -1,6 +1,9 @@
 import React from 'react'
 import '../styles/checkout.css';
 import CheckoutPlus from './checkoutPlus';
+import {DateFormatter} from '../dateFormatter';
+
+const dater = new DateFormatter();
 
 export default class CheckoutForm extends React.Component{
     constructor(props){
@@ -13,7 +16,8 @@ export default class CheckoutForm extends React.Component{
             firstNameError:"", 
             lastNameError:"",
             phoneError:"",
-            emailError:""
+            emailError:"",
+            orderTime:""
         }
     }
     
@@ -73,14 +77,21 @@ export default class CheckoutForm extends React.Component{
         }
         return true;
     }
+    confirmationTime = () =>{
+        const dateBox = dater.currentTime();
+        const {fullMonth, date, hour, minutes, meridiem} = dateBox;
+        this.setState({
+            orderTime: fullMonth + ", " + date + " " + hour + ":" + minutes + " " + meridiem
+        })   
+    }
 
     handleSubmit = e =>{
         e.preventDefault();
         const isValid = this.validator();
         if(isValid){
+            this.confirmationTime();
             document.querySelector('.outter-form-container').classList.add('hide');
             document.getElementById('checkout-plus-box').classList.remove('hide');
-            return <CheckoutPlus {...this.state}/>
         }
     }
 
@@ -88,7 +99,6 @@ export default class CheckoutForm extends React.Component{
         return(
             <div className="checkout-main-container">
                 <div className="outter-form-container">
-                    
                         <form action="">
                             <h1>Customer Details</h1>
                             <input  name="firstName" 

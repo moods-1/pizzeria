@@ -1,11 +1,5 @@
 import React from 'react';
 import {ProductConsumer} from '../backend/contextAPI';
-import {DateFormatter} from '../dateFormatter';
-
-const dater = new DateFormatter();
-const dateBox = dater.currentTime();
-const {fullMonth, date, hour, minutes, meridiem} = dateBox;
-const orderTime = fullMonth + ", " + date + " " + hour + ":" + minutes + " " + meridiem;
 
 const CheckoutPlus = props =>{
 
@@ -46,7 +40,7 @@ const CheckoutPlus = props =>{
                             </div>
                             <div className="confirmation-details-bottom">
                                 <div className="confirmation-bottom-text-box">
-                                    <p>Order received: {orderTime}</p><br/>
+                                    <p>Order received: {props.orderTime}</p><br/>
                                     <p>Your order will be prepared and ready for pick-up in 40 minutes.</p>
                                     <br/>
                                     <h3 style={{textAlign:"center"}}>Order Summary</h3>
