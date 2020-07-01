@@ -224,9 +224,9 @@
     .cart-column-title-box{
         display: none;
     }
-    .small-none{
+    /*.small-none{
         display: contents;
-    }
+    }*/
     .cart-column{
         width: 100%;
     }

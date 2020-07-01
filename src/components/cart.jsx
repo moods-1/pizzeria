@@ -5,6 +5,20 @@ import {Link} from 'react-router-dom';
 
 export default class Cart extends Component{
         
+    componentDidMount(){
+        const hideMobile = document.querySelector('.hidden-small');
+        if(hideMobile){
+            window.addEventListener('resize',()=>{
+                if(window.innerWidth < 768){
+                    hideMobile.classList.remove('d-none')
+                }
+                else{
+                    hideMobile.classList.add('d-none');
+                }
+            })  
+        } 
+    }
+    
     render(){
         
         return(
@@ -40,10 +54,10 @@ export default class Cart extends Component{
                                                         {cartData.name}
                                                     </div>
                                                     <div className="cart-column" id="cart-pizza-price">
-                                                        <div className="small-none">Price: &nbsp;</div>${cartData.price}
+                                                        <div className="hidden-small small-none">Price: &nbsp;</div>${cartData.price}
                                                     </div>
                                                     <div className="cart-column" id="cart-pizza-quantity">
-                                                    <div className="small-none">Qty: &nbsp;</div>
+                                                    <div className="hidden-small small-none">Qty: &nbsp;</div>
                                                         <input 
                                                             value="-" 
                                                             className="qtyMinus"
@@ -65,7 +79,7 @@ export default class Cart extends Component{
                                                         </button>
                                                     </div>
                                                     <div className="cart-column" id="cart-pie-total">
-                                                    <div className="small-none">Total: &nbsp;</div>${cartData.total}
+                                                    <div className="hidden-small small-none">Total: &nbsp;</div>${cartData.total}
                                                     </div>
                                                 </div>
                                             </div>                                                                                   

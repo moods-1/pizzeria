@@ -68,10 +68,12 @@ const CheckoutPlus = props =>{
                                         <div className="checkout-total-money">${(value.cartSubtotal * 1.13).toFixed(2)}</div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
                 )
+                
         }}
         </ProductConsumer>
     )

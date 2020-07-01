@@ -5,6 +5,8 @@ import fries from '../images/fries.png';
 import {ProductConsumer} from '../backend/contextAPI';
 import '../styles/main.css';
 
+
+
 export default class Header extends Component{
     state={
         burgerTracker: true,
@@ -32,10 +34,21 @@ export default class Header extends Component{
             }
         })
     }
+    componentDidMount(){
+        const burgerBox = document.querySelector('.burger-box');
+        window.addEventListener('resize',()=>{
+            if(window.innerWidth <= 768){
+                burgerBox.classList.remove('d-none')
+            }
+            else{
+                burgerBox.classList.add('d-none');
+            }
+        })   
+    }
     
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-             
+        
         return(
             <header>
                 <h1>Pizzeria Moodi</h1>
@@ -74,4 +87,6 @@ export default class Header extends Component{
         )
         
     }
+    
 }
+  

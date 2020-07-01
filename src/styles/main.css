@@ -5,12 +5,16 @@
   overflow-x: hidden;
 }
 .main-container {
+  position: relative;
   width: 100vw;
   max-width: 1920px;
   min-width: 320px;
   min-height: 100vh;
   background: black;
 }
+/*.home-main-container{
+  padding-top: 10vh;
+}*/
 header{
   background: black;
   color: white;
@@ -22,6 +26,8 @@ header{
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  /*position: fixed;*/
+  z-index: 10;
 }
 header h1{
   font-size: 2.5em;
@@ -182,6 +188,9 @@ nav{
 .profile-box p{
   font-size: 20px;
 }
+/*.about-main-container{
+ padding-top: 10vh;
+}*/
 .about-story{
   width: 60%;
   height: auto;
@@ -247,9 +256,9 @@ nav{
   nav{
     width: auto;
   }
-  .burger-box{
+  /*.burger-box{
     display: contents;
-  }
+  }*/
   .burger-box img{
     width: 30px;
     height: 20px;
