@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {ProductProvider} from './backend/contextAPI';
 import * as serviceWorker from './serviceWorker';
+const PORT = process.env.PORT || 5000;
 
 ReactDOM.render(
   <ProductProvider>
