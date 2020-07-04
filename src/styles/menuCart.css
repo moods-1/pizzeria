@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url('../images/whiteMarblePortrait.webp');
+    background: url('../images/whiteMarblePortrait.jpg');
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -95,7 +95,7 @@
     min-height: 100vh;
     justify-content: center;
     text-align: center;
-    background: url('../images/whiteMarblePortrait.webp');
+    background: url('../images/whiteMarblePortrait.jpg');
     background-position: center;
     background-size: cover;
     text-align: center;

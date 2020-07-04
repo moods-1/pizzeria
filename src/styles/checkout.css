@@ -103,7 +103,7 @@ form button:hover{
 }
 .confirmation-header{
     position: relative;
-    background-image: url('/images/sharingPizza.webp');
+    background-image: url('/images/sharingPizza.jpg');
     background-size: cover;
     background-position: center;
     height: 250px;   

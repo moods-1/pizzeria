@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
-import Man from '../images/manSmiling.webp';
-import Woman from '../images/womanSmiling.webp';
+import Man from '../images/manSmiling.jpg';
+import Woman from '../images/womanSmiling.jpg';
 import data from '../backend/data';
 import {Link} from 'react-router-dom';
 import '../styles/main.css';

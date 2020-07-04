@@ -72,7 +72,7 @@ nav{
 .home-showcase{
   width: 100vw;
   height: 50vh;
-  background: url('../images/pizzasInOven.webp');
+  background: url('../images/pizzasInOven.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; 
@@ -111,7 +111,7 @@ nav{
   }
 }
 .home-gallery{
-  background: url('../images/whiteMarble.webp');
+  background: url('../images/whiteMarble.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; 
