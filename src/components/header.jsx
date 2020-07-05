@@ -48,8 +48,8 @@ export default class Header extends Component{
         const burgerSource = this.state.burgerTracker? burger:fries;
         
         return(
-            {this.burgerCheck()}
-            <header>
+             <header>
+                {this.burgerCheck()}
                 <h1>Pizzeria Moodi</h1>
                     <nav className="horizontal-nav">
                         <ul className="nav-list" onClick={this.handleLink}>
