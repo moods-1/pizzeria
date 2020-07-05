@@ -35,6 +35,9 @@ export default class Header extends Component{
     }
     componentDidMount(){
         const burgerBox = document.querySelector('.burger-box');
+        if(window.innerWidth <= 768){
+            burgerBox.classList.remove('d-none')
+        }
         window.addEventListener('resize',()=>{
             if(window.innerWidth <= 768){
                 burgerBox.classList.remove('d-none')
@@ -42,9 +45,6 @@ export default class Header extends Component{
             else{
                 burgerBox.classList.add('d-none');
             }
-        })
-        this.setState({
-            burgerCheck: !this.state.burgerCheck
         })
     }
     
