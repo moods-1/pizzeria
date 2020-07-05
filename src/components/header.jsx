@@ -32,7 +32,7 @@ export default class Header extends Component{
             }
         })
     }
-    burgerCheck=()=>{
+    burgerCheck =()=>{
         const burgerBox = document.querySelector('.burger-box');
         window.addEventListener('resize',()=>{
             if(window.innerWidth <= 768){
@@ -46,8 +46,9 @@ export default class Header extends Component{
     
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-        this.burgerCheck();
+        
         return(
+            {this.burgerCheck()}
             <header>
                 <h1>Pizzeria Moodi</h1>
                     <nav className="horizontal-nav">
