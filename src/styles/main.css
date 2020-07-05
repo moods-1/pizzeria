@@ -72,6 +72,7 @@ nav{
 .home-showcase{
   width: 100vw;
   height: 50vh;
+  min-height: 300px;
   background: url('../images/pizzasInOven.jpg');
   background-size: cover;
   background-repeat: no-repeat;
