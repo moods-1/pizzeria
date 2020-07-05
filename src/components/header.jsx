@@ -8,6 +8,7 @@ import '../styles/main.css';
 export default class Header extends Component{
     state={
         burgerTracker: true,
+        burgerCheck: true
     }
     
     burgerToggle = e =>{
@@ -41,7 +42,10 @@ export default class Header extends Component{
             else{
                 burgerBox.classList.add('d-none');
             }
-        })   
+        })
+        this.setState({
+            burgerCheck: !this.state.burgerCheck
+        })
     }
     
     render(){
