@@ -34,7 +34,7 @@ export default class Header extends Component{
             }
         })
     }
-    componentDidMount(){
+    UNSAFE_componentWillMount(){
         const burgerBox = document.querySelector('.burger-box');
         window.addEventListener('resize',()=>{
             if(window.innerWidth <= 768){
