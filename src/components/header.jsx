@@ -5,8 +5,6 @@ import fries from '../images/fries.png';
 import {ProductConsumer} from '../backend/contextAPI';
 import '../styles/main.css';
 
-
-
 export default class Header extends Component{
     state={
         burgerTracker: true,
@@ -34,7 +32,7 @@ export default class Header extends Component{
             }
         })
     }
-    UNSAFE_componentWillMount(){
+    burgerCheck=()=>{
         const burgerBox = document.querySelector('.burger-box');
         window.addEventListener('resize',()=>{
             if(window.innerWidth <= 768){
@@ -48,7 +46,7 @@ export default class Header extends Component{
     
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-        
+        this.burgerCheck;
         return(
             <header>
                 <h1>Pizzeria Moodi</h1>
