@@ -32,7 +32,7 @@ export default class Header extends Component{
             }
         })
     }
-    burgerCheck =()=>{
+    componentDidMount(){
         const burgerBox = document.querySelector('.burger-box');
         window.addEventListener('resize',()=>{
             if(window.innerWidth <= 768){
@@ -49,7 +49,6 @@ export default class Header extends Component{
         
         return(
              <header>
-                {this.burgerCheck()}
                 <h1>Pizzeria Moodi</h1>
                     <nav className="horizontal-nav">
                         <ul className="nav-list" onClick={this.handleLink}>
