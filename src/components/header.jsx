@@ -46,7 +46,7 @@ export default class Header extends Component{
     
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-        this.burgerCheck;
+        this.burgerCheck();
         return(
             <header>
                 <h1>Pizzeria Moodi</h1>
