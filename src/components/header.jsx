@@ -8,6 +8,7 @@ import '../styles/main.css';
 export default class Header extends Component{
     state={
         burgerTracker: true,
+        burgerCheck: true
     }
     
     burgerToggle = e =>{
@@ -32,12 +33,26 @@ export default class Header extends Component{
             }
         })
     }
+    componentDidMount(){
+        const burgerBox = document.querySelector('.burger-box');
+        if(window.innerWidth <= 768){
+            burgerBox.classList.remove('d-none')
+        }
+        window.addEventListener('resize',()=>{
+            if(window.innerWidth <= 768){
+                burgerBox.classList.remove('d-none')
+            }
+            else{
+                burgerBox.classList.add('d-none');
+            }
+        })
+    }
     
     render(){
         const burgerSource = this.state.burgerTracker? burger:fries;
-             
+        
         return(
-            <header>
+             <header>
                 <h1>Pizzeria Moodi</h1>
                     <nav className="horizontal-nav">
                         <ul className="nav-list" onClick={this.handleLink}>
@@ -74,4 +89,6 @@ export default class Header extends Component{
         )
         
     }
+    
 }
+  

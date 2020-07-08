@@ -5,12 +5,16 @@
   overflow-x: hidden;
 }
 .main-container {
+  position: relative;
   width: 100vw;
   max-width: 1920px;
   min-width: 320px;
   min-height: 100vh;
   background: black;
 }
+/*.home-main-container{
+  padding-top: 10vh;
+}*/
 header{
   background: black;
   color: white;
@@ -22,6 +26,8 @@ header{
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  /*position: fixed;*/
+  z-index: 200 !important;
 }
 header h1{
   font-size: 2.5em;
@@ -66,7 +72,8 @@ nav{
 .home-showcase{
   width: 100vw;
   height: 50vh;
-  background: url('../images/pizzasInOven.webp');
+  min-height: 300px;
+  background: url('../images/pizzasInOven.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; 
@@ -105,7 +112,7 @@ nav{
   }
 }
 .home-gallery{
-  background: url('../images/whiteMarble.webp');
+  background: url('../images/whiteMarble.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; 
@@ -182,8 +189,12 @@ nav{
 .profile-box p{
   font-size: 20px;
 }
+/*.about-main-container{
+ padding-top: 10vh;
+}*/
 .about-story{
   width: 60%;
+  min-height: 90vh;
   height: auto;
   padding: 70px 20px 0 20px;
   margin: auto;
@@ -233,7 +244,9 @@ nav{
   .about-story{
     padding-top: 50px;
     width: 70%;
-    height: 80vh;
+    height: 90vh;
+    min-height: 700px;
+    height: auto;
   }
   .map-box{
     width: 80%;
@@ -247,9 +260,9 @@ nav{
   nav{
     width: auto;
   }
-  .burger-box{
+  /*.burger-box{
     display: contents;
-  }
+  }*/
   .burger-box img{
     width: 30px;
     height: 20px;
@@ -268,6 +281,7 @@ nav{
     transition: 0.3s ease;
     width: 30%;
     height: 30vh;
+    min-height: 200px;
     background: black;
     z-index: -1;
   }
