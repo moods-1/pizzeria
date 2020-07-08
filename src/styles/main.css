@@ -27,7 +27,7 @@ header{
   align-items: center;
   overflow: hidden;
   /*position: fixed;*/
-  z-index: 10;
+  z-index: 200 !important;
 }
 header h1{
   font-size: 2.5em;

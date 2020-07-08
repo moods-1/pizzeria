@@ -7,9 +7,10 @@ import Cart from './components/cart';
 import Footer from './components/footer';
 import Menu from './components/menu';
 import Checkout from './components/checkout';
+import Confirmation from './components/confirmation';
+import Pay from './components/pay';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-// eslint-disable-next-line
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/pay" component={Pay} />
+        <Route path="/confirmation" component={Confirmation} />
+
         <Footer />
       </div>
     </Router>

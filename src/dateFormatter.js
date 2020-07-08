@@ -34,12 +34,16 @@ export class DateFormatter{
         let hour =  d.getHours();
         let minutes = d.getMinutes();
         let meridiem = '';
-        if(hour >= 13){
-                hour = hour - 12;
-                meridiem = 'PM';
-        }else{
-                meridiem ='AM';
-        }
+        if(hour===12){
+            meridiem = "PM"
+        }else if (hour === 0) {
+            hour = 12;
+            meridiem = "AM";
+        }else if (hour >= 13) {
+            hour = hour - 12;
+            meridiem = "PM";
+        }else meridiem = "AM";
+        
         if(minutes < 10){
             minutes = '0' + minutes;
         }

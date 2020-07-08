@@ -6,7 +6,12 @@ class ProductProvider extends Component{
     state={
         products: data.products,
         cart: [],
-        cartSubtotal: 0
+        cartSubtotal: 0,
+        firstName: "",
+        lastName:"",
+        email: "",
+        phone:"",
+        empty: true
     }
     
     getItem = id =>{
@@ -85,6 +90,14 @@ class ProductProvider extends Component{
             return{cartSubtotal: subtotal}}
         )
     }
+    customerDetails =(firstName,lastName,email,phone) =>{
+        this.setState({firstName,lastName,email,phone})
+    }
+    emptyCart =()=>{
+        if(this.state.empty){
+            this.setState({cart: [], empty: false})
+        }
+    }
     
     render(){
         return(
@@ -94,7 +107,9 @@ class ProductProvider extends Component{
                 increment: this.increment,
                 decrement: this.decrement,
                 makeTotal: this.makeTotal,
-                removeItem: this.removeItem
+                removeItem: this.removeItem,
+                customerDetails: this.customerDetails,
+                emptyCart: this.emptyCart
             }}>
                 {this.props.children}
             </ProductContext.Provider>
