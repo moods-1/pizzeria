@@ -7,8 +7,7 @@ import '../styles/main.css';
 
 export default class Header extends Component{
     state={
-        burgerTracker: true,
-        burgerCheck: true
+        burgerTracker: true
     }
     
     burgerToggle = e =>{
@@ -75,7 +74,8 @@ export default class Header extends Component{
                                             </li>
                                         </Link>
                                     )
-                            }}
+                                }
+                            }
                             </ProductConsumer>
                         </ul>
                     </nav>

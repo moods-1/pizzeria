@@ -12,9 +12,6 @@
   min-height: 100vh;
   background: black;
 }
-/*.home-main-container{
-  padding-top: 10vh;
-}*/
 header{
   background: black;
   color: white;
@@ -26,7 +23,6 @@ header{
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  /*position: fixed;*/
   z-index: 200 !important;
 }
 header h1{
@@ -135,7 +131,6 @@ nav{
   position: absolute;
   width: 100%;
   top: 10px;
-  /*font-family: 'Alex Brush', cursive;*/
   text-align: center;
   font-size: 30px; 
 }
@@ -189,9 +184,6 @@ nav{
 .profile-box p{
   font-size: 20px;
 }
-/*.about-main-container{
- padding-top: 10vh;
-}*/
 .about-story{
   width: 60%;
   min-height: 90vh;
@@ -260,9 +252,6 @@ nav{
   nav{
     width: auto;
   }
-  /*.burger-box{
-    display: contents;
-  }*/
   .burger-box img{
     width: 30px;
     height: 20px;

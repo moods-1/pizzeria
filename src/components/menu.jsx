@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {ProductConsumer} from '../backend/contextAPI';
 import '../styles/menuCart.css';
 
-export default class Menu extends Component{
-    handleCart = (e) =>{
-        //e.target.innerHTML = "In cart";
-        //e.target.style.background = "gray";
-        //console.log(e.target.parentElement.parentElement);
-        console.log(e.target.parentElement.parentElement);
-    }
-    render(){
+
+const Menu =()=>{
+    
         return(
             <div className="menu-main-container">
                 <h1 id="menu-title">Pizzas</h1>
@@ -50,4 +45,4 @@ export default class Menu extends Component{
             </div>
         )
     }
-}
+export default Menu

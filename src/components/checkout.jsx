@@ -1,7 +1,7 @@
-import React from 'react'
+import React,{Component} from 'react'
 import '../styles/checkout.css';
 
-export default class CheckoutForm extends React.Component{
+export default class CheckoutForm extends Component{
     constructor(props){
         super(props);
         this.state={
