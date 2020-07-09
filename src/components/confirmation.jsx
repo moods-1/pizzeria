@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {ProductConsumer} from '../backend/contextAPI';
 import {DateFormatter} from '../dateFormatter';
 import '../styles/checkout.css'
-
 const dater = new DateFormatter();
 
 export default class Confirmation extends Component{

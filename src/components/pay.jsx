@@ -1,9 +1,9 @@
-import React from 'react'
+import React,{Component} from 'react'
 import { PayPalButton } from "react-paypal-button-v2";
 import {ProductConsumer} from "../backend/contextAPI";
 import Confirmation from './confirmation';
  
-class Pay extends React.Component{
+export default class Pay extends Component{
     constructor(props) {
         super(props);
     
@@ -30,7 +30,7 @@ class Pay extends React.Component{
     };
     
     render() {
-    const { showButtons, paid} = this.state;
+        const { showButtons, paid} = this.state;
     return (
         <ProductConsumer>{
             value=>{
@@ -94,4 +94,3 @@ class Pay extends React.Component{
     )
   }
 }
-export default Pay
