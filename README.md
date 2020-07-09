@@ -12,4 +12,4 @@ The idea to create an app for a high-end pizzeria was sparked during the COVID-1
   - HTML5
   - CSS3
   - Javascript ES6
-  - Paypal Sandbox SDK
+  - Paypal Payment SDK (sandbox)
