@@ -71,7 +71,7 @@ export default class Pay extends Component{
                                 <div className="payPal-buttons-box">
                                     <PayPalButton
                                         amount={(value.cartSubtotal * 1.13).toFixed(2)}
-                                        style={{color:"silver"}}
+                                        style={{color:"blue"}}
                                         currency="CAD"
                                         shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                                         onApprove={(data, actions) => this.onApprove(data, actions)}
