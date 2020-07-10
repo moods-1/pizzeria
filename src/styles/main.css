@@ -293,6 +293,9 @@ nav{
       transform: translateX(10px);
     }
   }
+  .home-showcase{
+  background: url('../images/pizzasInOvenMobile.jpg');
+  }
   .optional-gallery-box{
     display: none;
   }
