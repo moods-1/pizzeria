@@ -4,7 +4,7 @@ const Footer = () =>{
 
     return(
         <footer>
-            <p>Crafting qualty since 1945</p>
+            <p>Crafting quality since 1945</p>
         </footer>
     )
 }
