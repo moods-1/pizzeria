@@ -43,6 +43,10 @@ export default class Header extends Component{
             }
             else{
                 burgerBox.classList.add('d-none');
+                this.setState({
+                    burgerTracker: true
+                })
+                document.querySelector('.nav-list').classList.remove('nav-shift');
             }
         })
     }
