@@ -30,7 +30,7 @@ form h1{
     margin-bottom: 35px;
 }
 form input{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     color: black;
     width: 100%;
@@ -161,6 +161,15 @@ form button:hover{
     width: auto;
     text-align: right;
 }
+.payInfo{
+    margin: auto;
+    padding-bottom: 20px;;
+    width: 300px;
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+    overflow: hidden;    
+}
 
 /* Confirmation */
 
@@ -239,7 +248,7 @@ form button:hover{
         font-size: 35px;
     }
     form input{
-        font-size: 26px
+        font-size: 24px
     }
     .confirmation-box{
         width: 100%;
@@ -300,6 +309,10 @@ form button:hover{
     #payment-total-price{
         font-size: 16px;
         font-weight: 500;
+    }
+    .payInfo{
+        font-size: 16px;
+        font-weight: 500;    
     }
 }
 
