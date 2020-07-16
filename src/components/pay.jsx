@@ -68,6 +68,11 @@ export default class Pay extends Component{
                                         <div className="payment-total-money">${(value.cartSubtotal * 1.13).toFixed(2)}</div>
                                     </div>
                                 </div>                                       
+                                <div className="payInfo">
+                                    <p>Use the following credentials:</p>
+                                    <p>email: me@test.ca</p>
+                                    <p>password: Pizzeria1</p>
+                                </div>
                                 <div className="payPal-buttons-box">
                                     <PayPalButton
                                         amount={(value.cartSubtotal * 1.13).toFixed(2)}
