@@ -16,7 +16,7 @@ export default class CheckoutForm extends Component{
             emailError:""
         }
     }
-    
+        
     handleChange = e =>{
         this.setState({
             [e.target.name]: e.target.value
@@ -70,16 +70,43 @@ export default class CheckoutForm extends Component{
             },2500);
             return false;
         }
+        
         return true;
     }
     
     handleSubmit = e =>{
         e.preventDefault();
         const isValid = this.validator();
-        if(isValid) this.props.history.push('/pay')            
+        if(isValid){
+            if(localStorage.getItem('credentials')){
+                this.props.history.push('/pay');
+            }
+            else{
+                let details = JSON.stringify(this.state);
+                localStorage.setItem('credentials',details);
+                this.props.history.push('/pay');
+            }           
+        } 
     }
-        
+    
+    componentDidMount(){
+        if(localStorage.getItem('credentials')){
+            let credentials = JSON.parse(localStorage.getItem('credentials'));
+            document.getElementsByName('firstName')[0].value = credentials.firstName;
+            document.getElementsByName('lastName')[0].value = credentials.lastName;
+            document.getElementsByName('phone')[0].value = credentials.phone;
+            document.getElementsByName('email')[0].value = credentials.email;
+            this.setState({
+                firstName: credentials.firstName,
+                lastName: credentials.lastName,
+                phone: credentials.phone,
+                email: credentials.email
+            })
+        }
+    }
+
     render(){
+        
         return(
             <div className="checkout-main-container">
                 <div className="outter-form-container">
