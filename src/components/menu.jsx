@@ -7,7 +7,9 @@ const Menu =()=>{
     
         return(
             <div className="menu-main-container">
-                <h1 id="menu-title">Pizzas</h1>
+                <div>
+                    <h1 id="menu-title">Pizzas</h1>
+                </div>
                 <ProductConsumer>
                     {value=>{
                         return value.products.map(product =>
