@@ -9,9 +9,9 @@
     text-align: center;
 }
 #menu-title{
-    color: black;
-    font-size: 3em;
-    margin: 20px 0;
+    font-size: 2.5em;
+    padding: 10px 0;
+    background: rgba(3, 3, 3, 0.295);
 }
 .d-none{
     display: none;
@@ -100,9 +100,10 @@
     background-size: cover;
     text-align: center;
 }
-.main-cart-container h1{
-    font-size: 2.2em;
-    padding: 20px 0;
+#cart-H1{
+    font-size: 2.5em;
+    padding: 10px 0;
+    background: rgba(3, 3, 3, 0.295);
 }
 #cart-remove-button{
     color: white;
@@ -222,6 +223,12 @@
     }
 }
 @media(max-width: 767px){
+    #menu-title{
+        font-size: 2em;
+    } 
+    #cart-H1{
+        font-size: 2em;
+    }
     .cart-column-title-box{
         display: none;
     }
