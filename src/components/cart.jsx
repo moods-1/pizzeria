@@ -45,7 +45,7 @@ export default class Cart extends Component{
                             return(
                                 <div className="main-cart-container">
                                     <div>
-                                        <h1 style={{textAlign:"center"}}>Your Cart</h1>
+                                        <h1 id="cart-H1">Your Cart</h1>
                                     </div>
                                     <div className="cart-column-title-box">
                                         <div className="horizontal-flex">

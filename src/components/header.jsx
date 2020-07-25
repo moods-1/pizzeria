@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import {Link} from 'react-router-dom'
 import burger from '../images/burger.png';
 import fries from '../images/fries.png';
+import cart from '../images/cart.png'
 import {ProductConsumer} from '../backend/contextAPI';
 import '../styles/main.css';
 
@@ -10,7 +11,7 @@ export default class Header extends Component{
         burgerTracker: true
     }
     
-    burgerToggle = e =>{
+    burgerToggle = () =>{
         this.setState({
             burgerTracker: !this.state.burgerTracker
         },()=>{
@@ -20,7 +21,7 @@ export default class Header extends Component{
             })
         })    
     }
-    handleLink = e =>{
+    handleLink = () =>{
         this.setState({burgerTracker: !this.state.burgerTracker});
         document.querySelector('.nav-list').classList.toggle('nav-shift');
         document.querySelectorAll('.nav-list li').forEach((link, index) =>{
@@ -57,6 +58,7 @@ export default class Header extends Component{
         return(
              <header>
                 <h1>Pizzeria Moodi</h1>
+                    <div className="top-nav">
                     <nav className="horizontal-nav">
                         <ul className="nav-list" onClick={this.handleLink}>
                             <Link to='/' style={{ textDecoration: 'none' }}>
@@ -67,20 +69,7 @@ export default class Header extends Component{
                             </Link>
                             <Link to="/about" style={{ textDecoration: 'none' }}>
                                 <li className="nav-list-item">About</li>
-                            </Link>
-                            <ProductConsumer>
-                                {value=>{
-                                    return( 
-                                        <Link to="/cart" style={{ textDecoration: 'none'}}>
-                                            <li 
-                                                className="nav-list-item">
-                                                Cart ({value.cart.length})
-                                            </li>
-                                        </Link>
-                                    )
-                                }
-                            }
-                            </ProductConsumer>
+                            </Link>    
                         </ul>
                     </nav>
                     <div 
@@ -88,6 +77,28 @@ export default class Header extends Component{
                         onClick={this.burgerToggle}
                     >
                         <img src={burgerSource} alt="burger" />
+                    </div>
+                    <ul>
+                        <ProductConsumer>
+                            {value=>{
+                                return( 
+                                    <div className="cart">
+                                        <Link to="/cart" style={{ textDecoration: 'none'}}>
+                                            <li> 
+                                                <img src={cart} alt="cart" />
+                                                
+                                            </li>
+                                            <div className="cart-value" style={{color:'white',fontWeight:'bold'}}>
+                                                {value.cart.length}
+                                            </div>
+                                        </Link>
+                                        
+                                    </div>
+                                )
+                            }
+                        }
+                        </ProductConsumer>
+                    </ul>
                     </div>
             </header>
         )
