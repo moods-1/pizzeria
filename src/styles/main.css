@@ -45,7 +45,6 @@ header h1{
 }
 .cart-value{
   position: absolute;
-  overflow: hidden;
   text-align: center;
   font-size: 20px;
   min-width: 20px;
@@ -78,7 +77,7 @@ nav{
 }
 .burger-box{
   width: 25px;
-  height: 23px;
+  height: 20px;
   margin-right: 10px;
   overflow: hidden;
 }
@@ -255,8 +254,11 @@ nav{
   .home-showcase{
     height: 30vh;
   }
-  nav{
+  .top-nav{
     width: 50%;
+  }
+  nav{
+    width: 90%;
   }
   .about-story{
     padding-top: 50px;
@@ -270,12 +272,16 @@ nav{
     height: 300px;
   }
 }
-@media(max-width: 768px){
+@media(max-width: 767px){
   header h1{
     font-size: 1.5em;
   }
-  nav{
-    width: auto;
+  .horizontal-nav{
+    width: 0px;
+  }
+  .top-nav{
+    display: flex;
+    justify-content: flex-end;
   }
   .artisan-box{
     top: 35%;
@@ -351,6 +357,9 @@ nav{
 @media(max-width: 600px){
   header{
     padding: 0px 20px;
+  }
+  .top-nav{
+    width: 30%;
   }
   .artisan-box{
     height: 150px;
