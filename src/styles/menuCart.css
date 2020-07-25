@@ -256,7 +256,7 @@
         grid-area: i;
     }
     #cart-image-box img{
-        width: 50%;
+        width: 35%;        
     }
     #cart-pizza-price{
         grid-area: p;
@@ -269,5 +269,10 @@
     }
     #cart-remove-box{
         grid-area: r;
+    }
+}
+@media(max-width: 414px){
+    #cart-image-box img{
+        width: 45%;        
     }
 }
