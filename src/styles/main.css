@@ -35,8 +35,9 @@ header h1{
 }
 .cart{
   position: relative;
+  overflow: hidden;
   width: 40px;
-  height: 25px;
+  height: 27px;
 }
 .cart img{
   width: 100%;
