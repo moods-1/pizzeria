@@ -1,8 +1,8 @@
 ## Pizzeria Moodi
 
-### This app was created as challenge to myself to create a project to tackle two subjects that were new to me. Those things were React JS and e-commerce. 
+### This app was created as challenge to myself to create an e-commerce project which went all the way through the payment process. 
 
-The idea to create an app for a high-end pizzeria was sparked during the COVID-19 pandemic. The fact that so many small businesses were suffering due to the fact that they had no web presence or they were not utilizing other modern ways of doing business. During the process of making this app, my mind had to be altered from doing things the standard way of web development using HTML, CSS, and Javascript only. Learning how to combine the core web tools with all that comes with React was challenging at first, but the end result was worth it. 
+The idea to create an app for a high-end pizzeria was sparked during the COVID-19 pandemic. The fact that so many small businesses were suffering due to the fact that they had no web presence or they were not utilizing other modern ways of doing business.
 
 ### Project tools:
   - Visual Studio Code
@@ -11,5 +11,5 @@ The idea to create an app for a high-end pizzeria was sparked during the COVID-1
   - React
   - HTML5
   - CSS3
-  - Javascript ES6
-  - Paypal Payment SDK (sandbox)
+  - JavaScript ES6
+  - Paypal Sandbox SDK
