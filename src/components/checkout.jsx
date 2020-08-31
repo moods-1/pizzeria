@@ -70,7 +70,6 @@ export default class CheckoutForm extends Component{
             },2500);
             return false;
         }
-        
         return true;
     }
     
@@ -92,10 +91,10 @@ export default class CheckoutForm extends Component{
     componentDidMount(){
         if(localStorage.getItem('credentials')){
             let credentials = JSON.parse(localStorage.getItem('credentials'));
-            document.getElementsByName('firstName')[0].value = credentials.firstName;
-            document.getElementsByName('lastName')[0].value = credentials.lastName;
-            document.getElementsByName('phone')[0].value = credentials.phone;
-            document.getElementsByName('email')[0].value = credentials.email;
+            document.getElementById('firstName').value = credentials.firstName;
+            document.getElementById('lastName').value = credentials.lastName;
+            document.getElementById('phone').value = credentials.phone;
+            document.getElementById('email').value = credentials.email;
             this.setState({
                 firstName: credentials.firstName,
                 lastName: credentials.lastName,
@@ -113,6 +112,7 @@ export default class CheckoutForm extends Component{
                         <form action="">
                             <h1>Customer Details</h1>
                             <input  name="firstName" 
+                                    id="firstName" 
                                     type="text" 
                                     placeholder="First name"
                                     onChange={this.handleChange}/><br/>
@@ -120,6 +120,7 @@ export default class CheckoutForm extends Component{
                                         {this.state.firstNameError}
                                     </div>
                             <input  name="lastName" 
+                                    id="lastName"
                                     type="text" 
                                     placeholder="Last name"
                                     onChange={this.handleChange}/><br/>
@@ -127,13 +128,15 @@ export default class CheckoutForm extends Component{
                                         {this.state.lastNameError}
                                     </div>
                             <input  name="phone" 
+                                    id="phone"
                                     type="text" 
                                     placeholder="9055555555"
                                     onChange={this.handleChange}/><br/>
                                     <div className="error-message">
                                         {this.state.phoneError}
                                     </div>
-                            <input  name="email"    
+                            <input  name="email" 
+                                    id="email"   
                                     type="email" 
                                     placeholder="email@you.com"
                                     onChange={this.handleChange}/><br/>

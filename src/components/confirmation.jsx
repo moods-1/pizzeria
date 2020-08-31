@@ -9,7 +9,7 @@ export default class Confirmation extends Component{
     confirmationTime=()=>{
         const dateBox = dater.currentTime();
         const {fullMonth, date, hour, minutes, meridiem} = dateBox;
-        let  orderTime = fullMonth + ", " + date + " " + hour + ":" + minutes + " " + meridiem;
+        let  orderTime = `${fullMonth}, ${date} ${hour}:${minutes} ${meridiem}`;
         return orderTime;  
     }
     

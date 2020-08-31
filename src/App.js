@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/main.css';
 import Header from './components/header';
-import Home from './components/home';
+import Home from './components/home/home';
 import About from './components/about';
-import Cart from './components/cart';
+import Cart from './components/cart/cart';
 import Footer from './components/footer';
 import Menu from './components/menu';
 import Checkout from './components/checkout';

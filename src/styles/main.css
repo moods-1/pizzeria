@@ -72,7 +72,7 @@ nav{
   list-style: none;
 }
 .nav-list-item{
-  color: white; 
+  color: white;
 }
 .nav-list-item:hover{
   opacity: 0.5;
