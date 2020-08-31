@@ -82,6 +82,7 @@ nav{
   width: 25px;
   height: 20px;
   margin-right: 10px;
+  cursor: pointer;
   overflow: hidden;
 }
 .burger-box img{
