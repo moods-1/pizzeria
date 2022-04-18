@@ -8,10 +8,11 @@ The idea to create an app for a high-end pizzeria was sparked during the COVID-1
 
 ### Project tools:
   - Visual Studio Code
-  - Node JS (NPM, NPX, create-react-app, etc...)
-  - Git/GitHub
-  - React
+  - Node JS
+  - React with Context API
   - HTML5
   - CSS3
+  - SASS
   - JavaScript ES6
+  - JQuery
   - Paypal Sandbox SDK
