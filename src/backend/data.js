@@ -1,5 +1,4 @@
-export default{
-    products:[
+export const data=[
         {
             id: 1,
             name: 'De Niro Prosciutto',
@@ -55,5 +54,4 @@ export default{
             inCart: false,
             count: 1
         }
-    ]
-}
+    ];

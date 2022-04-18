@@ -24,12 +24,18 @@ function Header() {
     setBurgerTracker(!burgerTracker);
   };
 
-  const handleLink = () => {
-    setBurgerTracker(!burgerTracker);
-    $(".nav-list").toggleClass("nav-shift");
-    $(".nav-list li").each(function (index) {
+  const handleLink = (e) => {
+    const target = e.target.innerText;
+    $(".nav-list-item").each(function () {
+      if ($(this).text() === target) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
       $(this).css({ animation: "" });
     });
+    $(".nav-list").toggleClass("nav-shift");
+    setBurgerTracker(!burgerTracker);
   };
 
   const handleCartClick = () => {
@@ -57,9 +63,9 @@ function Header() {
       <h1>Pizzeria Moodi</h1>
       <div className="top-nav">
         <nav className="horizontal-nav">
-          <ul className="nav-list" onClick={handleLink}>
+          <ul className="nav-list" onClick={(e) => handleLink(e)}>
             <Link to="/" style={{ textDecoration: "none" }}>
-              <li className="nav-list-item">Home</li>
+              <li className="nav-list-item active">Home</li>
             </Link>
             <Link to="/menu" style={{ textDecoration: "none" }}>
               <li className="nav-list-item">Menu</li>

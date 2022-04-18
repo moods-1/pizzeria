@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import data from './data';
+import {data} from './data';
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component{
     state={
-        products: data.products,
+        products: data,
         cart: [],
         cartSubtotal: 0,
         firstName: "",

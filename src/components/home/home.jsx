@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import data from "../../backend/data";
+import {data} from "../../backend/data";
 import HomeGallery from "./HomeGallery";
 import HomeProfile from "./HomeProfile";
 import HomeShowcase from "./HomeShowcase";
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="home-main-container">
       <HomeShowcase />
-      <HomeGallery products={data.products} />
+      <HomeGallery products={data} />
       <HomeProfile />
     </div>
   );
