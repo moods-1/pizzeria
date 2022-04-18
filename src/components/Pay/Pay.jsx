@@ -1,8 +1,9 @@
 import React,{Component} from 'react'
 import { PayPalButton } from "react-paypal-button-v2";
-import {ProductConsumer} from "../backend/contextAPI";
-import Confirmation from './confirmation';
- 
+import {ProductConsumer} from "../../backend/contextAPI";
+import Confirmation from '../Confirmation/Confirmation';
+import "./Pay.scss";
+
 export default class Pay extends Component{
     constructor(props) {
         super(props);
@@ -48,12 +49,12 @@ export default class Pay extends Component{
                                     {
                                     return(
                                         <div key={cartData.id} className="payment-summary">
-                                            <div>
+                                            <div id="payment-summary-img">
                                                 <img src={cartData.image} alt="pizza"/>
                                             </div>
-                                            <div>{cartData.name}</div>
-                                            <div>Qty: {cartData.count}</div>
-                                            <div>${(cartData.total).toFixed(2)}</div>
+                                            <div id="payment-summary-subject">{cartData.name}</div>
+                                            <div id="payment-summary-qty">Qty: {cartData.count}</div>
+                                            <div id="payment-summary-total">${(cartData.total).toFixed(2)}</div>
                                         </div>
                                         )
                                     })
