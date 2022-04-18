@@ -1,27 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.b5d47777.chunk.css",
-    "main.js": "/static/js/main.42ee7e6b.chunk.js",
-    "main.js.map": "/static/js/main.42ee7e6b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2eaab6d6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2eaab6d6.js.map",
-    "static/js/2.5986dd53.chunk.js": "/static/js/2.5986dd53.chunk.js",
-    "static/js/2.5986dd53.chunk.js.map": "/static/js/2.5986dd53.chunk.js.map",
+    "main.css": "/static/css/main.30da3d08.css",
+    "main.js": "/static/js/main.7af2367e.js",
+    "static/media/pizzasInOven.jpg": "/static/media/pizzasInOven.c1da4c75167e34728fa1.jpg",
+    "static/media/pizzasInOvenMobile.jpg": "/static/media/pizzasInOvenMobile.55eec84df4fd262310bf.jpg",
+    "static/media/whiteMarble.jpg": "/static/media/whiteMarble.24501dd8fc178b26df03.jpg",
+    "static/media/whiteMarblePortrait.jpg": "/static/media/whiteMarblePortrait.55f99598e8d153a20257.jpg",
+    "static/media/sharingPizza.jpg": "/static/media/sharingPizza.bb9b082e2809a421d8ae.jpg",
+    "static/media/womanSmiling.jpg": "/static/media/womanSmiling.74d4ec1fa48e2e8011ff.jpg",
+    "static/media/manSmiling.jpg": "/static/media/manSmiling.5d2c4821d1529a1e2296.jpg",
+    "static/media/cart.png": "/static/media/cart.42fd4e7dc45188309b50.png",
     "index.html": "/index.html",
-    "precache-manifest.2dc791bdb3d999455a7806007e22f4a5.js": "/precache-manifest.2dc791bdb3d999455a7806007e22f4a5.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.b5d47777.chunk.css.map": "/static/css/main.b5d47777.chunk.css.map",
-    "static/js/2.5986dd53.chunk.js.LICENSE.txt": "/static/js/2.5986dd53.chunk.js.LICENSE.txt",
-    "static/media/cart.png": "/static/media/cart.bf60284a.png",
-    "static/media/manSmiling.jpg": "/static/media/manSmiling.06a13196.jpg",
-    "static/media/Home.scss": "/static/media/whiteMarble.9744daeb.jpg",
-    "static/media/Checkout.scss": "/static/media/whiteMarblePortrait.4b0481b2.jpg",
-    "static/media/womanSmiling.jpg": "/static/media/womanSmiling.ee0360da.jpg"
+    "main.30da3d08.css.map": "/static/css/main.30da3d08.css.map",
+    "main.7af2367e.js.map": "/static/js/main.7af2367e.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2eaab6d6.js",
-    "static/js/2.5986dd53.chunk.js",
-    "static/css/main.b5d47777.chunk.css",
-    "static/js/main.42ee7e6b.chunk.js"
+    "static/css/main.30da3d08.css",
+    "static/js/main.7af2367e.js"
   ]
 }
