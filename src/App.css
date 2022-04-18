@@ -1,6 +1,14 @@
 /*
   NavBar - Main Header
 */
+.main-container {
+    position: relative;
+    width: 100vw;
+    max-width: 1920px;
+    min-width: 290px;
+    min-height: 100vh;
+    background: black;
+  }
 .home-container {
     display: flex;
     justify-content: space-between;

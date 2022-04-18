@@ -1,0 +1,212 @@
+.main-cart-container {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  justify-content: center;
+  text-align: center;
+  background: url("../../images/whiteMarblePortrait.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  button{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 300ms ease;
+    cursor: pointer;
+    &:hover{
+      transform: translateY(-1px);
+      box-shadow: 0px 0px 8px #777;
+    }
+  }
+}
+.cart-row{
+  background: #FFF;
+  padding: 10px;
+}
+#cart-H1 {
+  font-size: 2.5em;
+  padding: 10px 0;
+  background: rgba(3, 3, 3, 0.295);
+}
+.cart-remove-icon {
+  height: auto;
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.horizontal-flex {
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+.cart-column-title-box {
+  font-weight: bold;
+  font-size: 25px;
+}
+.cart-column {
+  width: 182px;
+  min-width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  overflow: hidden;
+  .cart-adjustor {
+    font-size: 16px;
+    padding: 5px;
+    width: 25px;
+    height: 30px;
+    background: rgb(0, 145, 255);
+  }
+}
+#cart-image-box img {
+  width: 100%;
+  height: 120px;
+}
+#cart-qty {
+  padding: 0 4px;
+}
+.cart-total-box {
+  width: 100vw;
+  min-width: 290px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+#cart-total-price {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.total-title {
+  width: 160px;
+  text-align: right;
+}
+.total-money {
+  min-width: 100px;
+  width: auto;
+  text-align: right;
+}
+#checkout-button {
+  background: rgb(0, 145, 255);
+  width: 250px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin-bottom: 20px;
+  outline-style: none;
+}
+.empty-cart {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 767px) {
+  #menu-title {
+    font-size: 2em;
+  }
+  .cart-row{
+    width: 90% !important;
+    margin: 20px auto 0px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px #777;
+  }
+  .cart-hr{
+    display: none;
+  }
+  #cart-H1 {
+    font-size: 2em;
+  }
+  .cart-column-title-box {
+    display: none;
+  }
+  .cart-column {
+    width: 100%;
+  }
+  .horizontal-flex {
+    width: 100%;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "n n"
+      "i i"
+      "p q"
+      "t t"
+      "r r";
+  }
+  #cart-pizza-name {
+    grid-area: n;
+  }
+  #cart-image-box {
+    grid-area: i;
+  }
+  #cart-image-box img {
+    width: 35%;
+  }
+  #cart-pizza-price {
+    grid-area: p;
+  }
+  #cart-pizza-quantity {
+    grid-area: q;
+  }
+  #cart-pie-total {
+    grid-area: t;
+  }
+  #cart-remove-box {
+    grid-area: r;
+  }
+}
+@media (max-width: 414px) {
+  .cart-row{
+    width: 95% !important;
+    border-radius: 10px;
+  }
+  .horizontal-flex {
+    grid-template-areas:
+      "n n"
+      "i i"
+      "p p"
+      "q q"
+      "t t"
+      "r r";
+  }
+  #cart-pizza-name {
+    grid-area: n;
+  }
+  #cart-image-box {
+    grid-area: i;
+  }
+  #cart-image-box img {
+    width: 35%;
+  }
+  #cart-pizza-price {
+    grid-area: p;
+  }
+  #cart-pizza-quantity {
+    grid-area: q;
+  }
+  #cart-pie-total {
+    grid-area: t;
+  }
+  #cart-remove-box {
+    grid-area: r;
+  }
+  #cart-image-box img {
+    width: 45%;
+  }
+}

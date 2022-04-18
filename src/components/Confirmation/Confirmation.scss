@@ -1,0 +1,62 @@
+.confirmation-main {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+.confirmation-box {
+  width: 400px;
+  height: auto;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 3px 3px 20px #777;
+}
+.confirmation-header {
+  position: relative;
+  background-image: url("/images/sharingPizza.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+.shadow-box {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  letter-spacing: 1.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+.confirmation-details-top {
+  padding: 20px;
+  text-align: center;
+}
+.confirmation-details-bottom {
+  padding: 20px;
+  text-align: center;
+}
+.confirmation-bottom-text-box {
+  padding: 0px 20px;
+  text-align: center;
+}
+.confirmation-bottom-text-box p {
+  font-size: 16px;
+}
+
+/* Media Queries */
+
+@media (max-width: 767px) {
+  .confirmation-bottom-text-box {
+    padding: 5px;
+  }
+}
+@media (max-width: 420px) {
+  .confirmation-box {
+    width: 95%;
+  }
+}

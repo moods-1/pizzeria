@@ -1,0 +1,70 @@
+.menu-main-container {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background: url("../../images/whiteMarblePortrait.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+#menu-title {
+  font-size: 2.5em;
+  padding: 10px 0;
+  background: rgba(3, 3, 3, 0.295);
+}
+.d-none {
+  display: none;
+}
+.menu-pizzas-box {
+  padding: 60px 0px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 260px);
+  justify-content: center;
+  align-items: center;
+}
+.menu-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 260px;
+  height: 350px;
+  padding: 20px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px #999;
+  transition: 300ms ease;
+  img {
+    width: 70%;
+    height: 70px;
+    margin: 10px auto;
+  }
+  .serving-price {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-evenly;
+    span {
+      font-weight: 500;
+    }
+  }
+  button {
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgb(0, 145, 255);
+  }
+  &:hover{
+    box-shadow: 3px 3px 20px #aaa;
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 767px) {
+  #menu-title {
+    font-size: 2em;
+  }
+}

@@ -29,7 +29,7 @@ export default{
             description: 'Mozzarella and feta cheese, arugula, olive oil, and oregano.',
             story: 'Light on ingredients, but delivers a powerful burst of flavour.',
             serves: 4,
-            price: 22,
+            price: 25,
             inCart: false,
             count: 1
         },
@@ -40,7 +40,7 @@ export default{
             description: 'Mozzarella cheese, tomato sauce, olive oil, and oregano.',
             story:'',
             serves: 5,
-            price: 25,
+            price: 22,
             inCart: false,
             count: 1
         },

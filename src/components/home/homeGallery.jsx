@@ -8,11 +8,11 @@ const HomeGallery = ({products}) => {
             <h1>Favourites</h1>
             {products.slice(0,3).map(product =>                    
                 <div key={product.id} className="gallery-box">
-                    <p id="gallery-box-title">{product.name}</p>
+                    <p className="gallery-box-title">{product.name}</p>
                     <Link to="/menu">
                         <img src={product.image} alt="pizza" />
                     </Link>
-                    <p>{product.story}</p>
+                    <p className="gallery-box-story">{product.story}</p>
                 </div>                   
             )}  
         </div>
