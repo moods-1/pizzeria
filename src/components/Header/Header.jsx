@@ -31,6 +31,12 @@ function Header() {
       $(this).css({ animation: "" });
     });
   };
+
+  const handleCartClick = () => {
+    $(".nav-list").removeClass("nav-shift");
+    setBurgerTracker(true);
+  };
+
   useEffect(() => {
     const burgerBox = $(".burger-box")[0];
     window.innerWidth <= 767 && burgerBox.classList.remove("d-none");
@@ -70,7 +76,7 @@ function Header() {
           <ProductConsumer>
             {(value) => {
               return (
-                <div className="cart">
+                <div className="cart" onClick={handleCartClick}>
                   <Link to="/cart" style={{ textDecoration: "none" }}>
                     <li>
                       <img src={cart} alt="cart" />

@@ -10,9 +10,9 @@
     "react": "^16.13.1",
     "react-async-script-loader": "^0.3.0",
     "react-dom": "^16.13.1",
-    "react-paypal-button-v2": "^2.6.2",
+    "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "sass": "^1.50.0",
     "url-loader": "^4.1.0"
   },

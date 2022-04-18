@@ -42,59 +42,53 @@ const CheckoutForm = (props) => {
 
   return (
     <div className="checkout-main-container">
-      
-        <form onSubmit={handleSubmit}>
-          <h1>Customer Details</h1>
-          <input
-            required
-            name="firstName"
-            id="firstName"
-            type="text"
-            placeholder="First name"
-            value={formData.firstName || ""}
-            onChange={(e) => handleChange(e)}
-          />
-          <br />
-          <div className="error-message">{formData.firstNameError}</div>
-          <input
-            required
-            name="lastName"
-            id="lastName"
-            min="2"
-            max="30"
-            type="text"
-            placeholder="Last name"
-            value={formData.lastName || ""}
-            onChange={(e) => handleChange(e)}
-          />
-          <br />
-          <div className="error-message">{formData.lastNameError}</div>
-          <input
-            required
-            name="phone"
-            id="phone"
-            minlength="10"
-            type="text"
-            placeholder="9055555555"
-            value={formData.phone || ""}
-            onChange={(e) => handleChange(e)}
-          />
-          <br />
-          <div className="error-message">{formData.phoneError}</div>
-          <input
-            required
-            name="email"
-            id="email"
-            type="email"
-            placeholder="email@you.com"
-            value={formData.email || ""}
-            onChange={(e) => handleChange(e)}
-          />
-          <br />
-          <div className="error-message">{formData.emailError}</div>
-          <button type="submit">Submit</button>
-        </form>
-      
+      <form onSubmit={handleSubmit}>
+        <h1>Customer Details</h1>
+        <input
+          autoFocus
+          required
+          name="firstName"
+          id="firstName"
+          minLength="2"
+          maxLength="30"
+          type="text"
+          placeholder="First name"
+          value={formData.firstName || ""}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          required
+          name="lastName"
+          id="lastName"
+          minLength="2"
+          maxLength="30"
+          type="text"
+          placeholder="Last name"
+          value={formData.lastName || ""}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          required
+          name="phone"
+          id="phone"
+          minLength="10"
+          maxLength="10"
+          type="text"
+          placeholder="9055555555"
+          value={formData.phone || ""}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          required
+          name="email"
+          id="email"
+          type="email"
+          placeholder="email@you.com"
+          value={formData.email || ""}
+          onChange={(e) => handleChange(e)}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };

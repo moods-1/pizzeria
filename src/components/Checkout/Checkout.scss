@@ -36,9 +36,12 @@ form input {
   letter-spacing: 1.5px;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1.5px solid black;
+  border-bottom: 1px solid #AAA;
   outline-style: none;
   background: none;
+  &:focus{
+    border-color: rgb(0, 145, 255);
+  }
 }
 ::placeholder {
   color: rgba(128, 128, 128, 0.733);
