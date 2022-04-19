@@ -4,12 +4,15 @@ import burger from "../../images/burger.png";
 import fries from "../../images/fries.png";
 import cart from "../../images/cart.png";
 import { ProductConsumer } from "../../backend/contextAPI";
+import { headerLinks } from "../../helpers/constants";
 import "./Header.scss";
 import $ from "jquery";
 
 function Header() {
   const [burgerTracker, setBurgerTracker] = useState(true);
-
+  const [linkId, setLinkId] = useState(0);
+  const burgerSource = burgerTracker ? burger : fries;
+  
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
     $(".nav-list li").each(function (index) {
@@ -25,13 +28,7 @@ function Header() {
   };
 
   const handleLink = (e) => {
-    const target = e.target.innerText;
     $(".nav-list-item").each(function () {
-      if ($(this).text() === target) {
-        $(this).addClass("active");
-      } else {
-        $(this).removeClass("active");
-      }
       $(this).css({ animation: "" });
     });
     $(".nav-list").toggleClass("nav-shift");
@@ -42,7 +39,7 @@ function Header() {
     $(".nav-list").removeClass("nav-shift");
     $(".nav-list-item").each(function () {
       $(this).removeClass("active");
-    })
+    });
     setBurgerTracker(true);
   };
 
@@ -59,23 +56,17 @@ function Header() {
     });
   });
 
-  const burgerSource = burgerTracker ? burger : fries;
-
   return (
     <header>
       <h1>Pizzeria Moodi</h1>
       <div className="top-nav">
         <nav className="horizontal-nav">
           <ul className="nav-list" onClick={(e) => handleLink(e)}>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li className="nav-list-item active">Home</li>
-            </Link>
-            <Link to="/menu" style={{ textDecoration: "none" }}>
-              <li className="nav-list-item">Menu</li>
-            </Link>
-            <Link to="/about" style={{ textDecoration: "none" }}>
-              <li className="nav-list-item">About</li>
-            </Link>
+            {headerLinks.map(({ id, title, route }) => (
+              <Link to={route} key={id} onClick={()=> setLinkId(id)} style={{ textDecoration: "none" }}>
+                <li className={`nav-list-item ${linkId === id? "active":""}`}>{title}</li>
+              </Link>
+            ))}
           </ul>
         </nav>
         <div className="burger-box d-none" onClick={burgerToggle}>
