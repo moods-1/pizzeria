@@ -37,9 +37,7 @@ function Header() {
 
   const handleCartClick = () => {
     $(".nav-list").removeClass("nav-shift");
-    $(".nav-list-item").each(function () {
-      $(this).removeClass("active");
-    });
+    setLinkId("")
     setBurgerTracker(true);
   };
 
