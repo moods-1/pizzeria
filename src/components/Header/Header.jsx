@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import burger from "../../images/burger.png";
 import fries from "../../images/fries.png";
 import cart from "../../images/cart.png";
-import { ProductConsumer } from "../../backend/contextAPI";
+import { useStateContext } from "../../backend/contextAPI";
 import { headerLinks } from "../../helpers/constants";
 import "./Header.scss";
 import $ from "jquery";
@@ -12,7 +12,8 @@ function Header() {
   const [burgerTracker, setBurgerTracker] = useState(true);
   const [linkId, setLinkId] = useState(0);
   const burgerSource = burgerTracker ? burger : fries;
-  
+  const { cart: cartItems } = useStateContext();
+
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
     $(".nav-list li").each(function (index) {
@@ -37,7 +38,7 @@ function Header() {
 
   const handleCartClick = () => {
     $(".nav-list").removeClass("nav-shift");
-    setLinkId("")
+    setLinkId("");
     setBurgerTracker(true);
   };
 
@@ -61,8 +62,17 @@ function Header() {
         <nav className="horizontal-nav">
           <ul className="nav-list" onClick={(e) => handleLink(e)}>
             {headerLinks.map(({ id, title, route }) => (
-              <Link to={route} key={id} onClick={()=> setLinkId(id)} style={{ textDecoration: "none" }}>
-                <li className={`nav-list-item ${linkId === id? "active":""}`}>{title}</li>
+              <Link
+                to={route}
+                key={id}
+                onClick={() => setLinkId(id)}
+                style={{ textDecoration: "none" }}
+              >
+                <li
+                  className={`nav-list-item ${linkId === id ? "active" : ""}`}
+                >
+                  {title}
+                </li>
               </Link>
             ))}
           </ul>
@@ -71,25 +81,19 @@ function Header() {
           <img src={burgerSource} alt="burger" />
         </div>
         <ul>
-          <ProductConsumer>
-            {(value) => {
-              return (
-                <div className="cart" onClick={handleCartClick}>
-                  <Link to="/cart" style={{ textDecoration: "none" }}>
-                    <li>
-                      <img src={cart} alt="cart" />
-                    </li>
-                    <div
-                      className="cart-value"
-                      style={{ color: "white", fontWeight: "bold" }}
-                    >
-                      {value.cart.length}
-                    </div>
-                  </Link>
-                </div>
-              );
-            }}
-          </ProductConsumer>
+          <div className="cart" onClick={handleCartClick}>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <li>
+                <img src={cart} alt="cart" />
+              </li>
+              <div
+                className="cart-value"
+                style={{ color: "white", fontWeight: "bold" }}
+              >
+                {cartItems.length}
+              </div>
+            </Link>
+          </div>
         </ul>
       </div>
     </header>

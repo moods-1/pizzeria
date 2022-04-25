@@ -1,7 +1,9 @@
 import React from "react";
+import { useStateContext } from "../../backend/contextAPI";
 
-const CartItems = ({ items }) => {
-  return items.cart.map((cartData) => (
+const CartItems = () => {
+const {cart, decrement, increment, removeItem} = useStateContext();
+  return cart.map((cartData) => (
     <div key={cartData.id}>
       <div className="horizontal-flex cart-row">
         <div className="cart-column" id="cart-image-box">
@@ -19,7 +21,7 @@ const CartItems = ({ items }) => {
           <button
             className="cart-adjustor"
             onClick={() => {
-              items.decrement(cartData.id);
+              decrement(cartData.id);
             }}
           >
             -
@@ -28,7 +30,7 @@ const CartItems = ({ items }) => {
           <button
             className="cart-adjustor"
             onClick={() => {
-              items.increment(cartData.id);
+              increment(cartData.id);
             }}
           >
             +
@@ -39,7 +41,7 @@ const CartItems = ({ items }) => {
             className="fa fa-trash cart-remove-icon"
             aria-hidden="true"
             onClick={() => {
-              items.removeItem(cartData.id);
+              removeItem(cartData.id);
             }}
           />
         </div>

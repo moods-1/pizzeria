@@ -1,121 +1,117 @@
-import React, { Component } from 'react'
-import {data} from './data';
-const ProductContext = React.createContext();
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { data } from "./data";
 
-class ProductProvider extends Component{
-    state={
-        products: data,
-        cart: [],
-        cartSubtotal: 0,
-        firstName: "",
-        lastName:"",
-        email: "",
-        phone:"",
-        empty: true
-    }
-    
-    getItem = id =>{
-        const product = this.state.products.find(item=> item.id === id);
-        return product;
-    }
-    
-    addToCart = id =>{
-        let tempProduct = [...this.state.products];
-        const index = tempProduct.indexOf(this.getItem(id));
-        const product = tempProduct[index];
-        product.inCart = true;
-        product.count = 1;
-        const price = product.price;
-        product.total = price;
-        this.setState(()=>{
-            return{products : tempProduct, cart:[...this.state.cart, product]}
-        }, ()=>{this.makeTotal()}
-        )
-    }
-    removeItem = id =>{
-        let tempProduct = [...this.state.products];
-        let tempCart = [...this.state.cart];
-        tempCart = tempCart.filter(item=> item.id !== id);
-        const index = tempProduct.indexOf(this.getItem(id));
-        let removedProduct = tempProduct[index];
-        removedProduct.inCart = false;
-        removedProduct.total = 0;
-        removedProduct.count= 0;
-        
-        this.setState(()=>{
-            return{
-                cart:[...tempCart],
-                products : [...tempProduct]
-                }
-            }, ()=>{this.makeTotal()}
-        )
-    }
+const Context = createContext();
 
-    increment = id =>{
-        let tempCart = [...this.state.cart];
-        const selectedProduct = tempCart.find(item => item.id === id);
-        const index = tempCart.indexOf(selectedProduct);
-        const product = tempCart[index];
-        product.count = product.count + 1;
-        product.total = product.count * product.price;
-        this.setState(()=>{
-            return{cart: [...tempCart]}
-        },()=>{
-            this.makeTotal();
-        })
-    }
+export const StateContext = ({ children }) => {
+  const [state, setState] = useState({
+    products: data,
+    cart: [],
+    cartSubtotal: 0,
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    empty: true,
+  });
 
-    decrement = id =>{
-        let tempCart = [...this.state.cart];
-        const selectedProduct = tempCart.find(item => item.id === id);
-        const index = tempCart.indexOf(selectedProduct);
-        const product = tempCart[index];
-        if(product.count > 0){
-            product.count = product.count - 1;
-            product.total = product.count * product.price;
-            this.setState(()=>{
-                return{cart: [...tempCart]}
-            },()=>{
-                this.makeTotal();
-            })
-        }
-        product.count === 0 && this.removeItem(selectedProduct.id);
-        
-    }
-    makeTotal = () =>{
-        let subtotal = 0;
-        this.state.cart.map(item => (subtotal += item.total));
-        //const total = subtotal;
-        this.setState(()=> {
-            return{cartSubtotal: subtotal}}
-        )
-    }
-    customerDetails =(firstName,lastName,email,phone) =>{
-        this.setState({firstName,lastName,email,phone})
-    }
-    emptyCart =()=>{
-        if(this.state.empty){
-            this.setState({cart: [], empty: false})
-        }
-    }
-    
-    render(){
-        return(
-            <ProductContext.Provider value={{
-                ...this.state,
-                addToCart: this.addToCart,
-                increment: this.increment,
-                decrement: this.decrement,
-                makeTotal: this.makeTotal,
-                removeItem: this.removeItem,
-                customerDetails: this.customerDetails,
-                emptyCart: this.emptyCart
-            }}>
-                {this.props.children}
-            </ProductContext.Provider>
-        )
-    }
-}
-const ProductConsumer = ProductContext.Consumer;
+  const getItem = (id) => {
+    const product = state.products.find((item) => item.id === id);
+    return product;
+  };
 
-export {ProductProvider, ProductConsumer};
+  const addToCart = (id) => {
+    let tempProduct = [...state.products];
+    const index = tempProduct.indexOf(getItem(id));
+    const product = tempProduct[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    setState((prevState) => ({
+      ...prevState,
+      products: tempProduct,
+      cart: [...state.cart, product],
+    }));
+  };
+
+  const removeItem = (id) => {
+    let tempProduct = [...state.products];
+    let tempCart = [...state.cart];
+    tempCart = tempCart.filter((item) => item.id !== id);
+    const index = tempProduct.indexOf(getItem(id));
+    let removedProduct = tempProduct[index];
+    removedProduct.inCart = false;
+    removedProduct.total = 0;
+    removedProduct.count = 0;
+    setState((prevState) => ({
+      ...prevState,
+      cart: [...tempCart],
+      products: [...tempProduct],
+    }));
+  };
+
+  const increment = (id) => {
+    let tempCart = [...state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+    product.count = product.count + 1;
+    product.total = product.count * product.price;
+    setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
+  };
+
+  const decrement = (id) => {
+    let tempCart = [...state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+    if (product.count > 0) {
+      product.count = product.count - 1;
+      product.total = product.count * product.price;
+      setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
+    }
+    product.count === 0 && removeItem(selectedProduct.id);
+  };
+
+  const customerDetails = (firstName, lastName, email, phone) => {
+    setState((prevState) => ({
+      ...prevState,
+      firstName,
+      lastName,
+      email,
+      phone,
+    }));
+  };
+  const emptyCart = () => {
+    let localProducts = state.products.map(product=>({...product, inCart: false}))
+    if (state.empty) {
+      setState((prevState) => ({ ...prevState, products: localProducts, cart: [], empty: false }));
+    }
+  };
+
+  useEffect(() => {
+    let subtotal = 0;
+    state.cart.map((item) => (subtotal += item.total));
+    //const total = subtotal;
+    setState((prevState) => ({ ...prevState, cartSubtotal: subtotal }));
+  }, [state.cart]);
+
+  return (
+    <Context.Provider
+      value={{
+        ...state,
+        addToCart,
+        increment,
+        decrement,
+        removeItem,
+        customerDetails,
+        emptyCart,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
+};
+
+export const useStateContext = () => useContext(Context);
