@@ -4,7 +4,7 @@ import burger from "../../images/burger.png";
 import fries from "../../images/fries.png";
 import cart from "../../images/cart.png";
 import { useStateContext } from "../../backend/contextAPI";
-import { headerLinks } from "../../helpers/constants";
+import { headerLinks, headerObject } from "../../helpers/constants";
 import "./Header.scss";
 import $ from "jquery";
 
@@ -17,7 +17,7 @@ function Header() {
     linkId,
     removeLinkId,
   } = useStateContext();
-
+  
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
     $(".nav-list li").each(function (index) {
@@ -58,6 +58,11 @@ function Header() {
     });
     return () => window.removeEventListener("resize", () => {});
   });
+
+  useEffect(() => {
+    let path = window.location.pathname;
+    addLinkId(path in headerObject ? headerObject[path] : null);
+  }, [addLinkId]);
 
   return (
     <header>

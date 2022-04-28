@@ -15,3 +15,9 @@ export const headerLinks = [
     route: "/about",
   },
 ];
+
+export const headerObject = {
+  "/": 0,
+  "/menu": 1,
+  "/about": 2,
+};

@@ -2,42 +2,42 @@
   NavBar - Main Header
 */
 .main-container {
-    position: relative;
-    width: 100vw;
-    max-width: 1920px;
-    min-width: 290px;
-    min-height: 100vh;
-    background: black;
-  }
+  position: relative;
+  width: 100vw;
+  max-width: 1920px;
+  min-width: 290px;
+  min-height: 100vh;
+  background: black;
+}
 .home-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    background-color: navajowhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  background-color: navajowhite;
 }
 
 .brand {
-    font-weight: bolder;
-    font-size: larger;
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .checkout {
-    font-size: large;
-    font-weight: bold;
+  font-size: large;
+  font-weight: bold;
 }
 .checkout-total {
-    display: inline;
-    margin-right: 25px;
+  display: inline;
+  margin-right: 25px;
 }
 .checkout-button {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /*
     Home Container
 */
 .image {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
