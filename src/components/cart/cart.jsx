@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStateContext } from "../../backend/contextAPI";
 import CartHeaders from "./CartHeaders";
 import CartItems from "./CartItems";
@@ -8,24 +8,6 @@ import "./Cart.scss";
 
 const Cart = () => {
   const { cart, cartSubtotal } = useStateContext();
-
-  useEffect(() => {
-    const hideMobile = Array.from(
-      document.getElementsByClassName("hide-mobile")
-    );
-    if (hideMobile) {
-      window.addEventListener("resize", () => {
-        if (window.innerWidth < 768)
-          hideMobile.forEach((item) => item.classList.remove("d-none"));
-        else hideMobile.forEach((item) => item.classList.add("d-none"));
-      });
-    }
-    if (hideMobile) {
-      if (window.innerWidth < 768)
-        hideMobile.forEach((item) => item.classList.remove("d-none"));
-      else hideMobile.forEach((item) => item.classList.add("d-none"));
-    }
-  }, []);
 
   return (
     <>
@@ -42,7 +24,7 @@ const Cart = () => {
       ) : (
         <div className="empty-cart">
           <h1 style={{ color: "white", textAlign: "center" }}>
-            Currently your cart is empty.
+            Currently, your cart is empty.
           </h1>
         </div>
       )}

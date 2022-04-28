@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./About.scss";
 
-export default class About extends Component {
-  state = {};
-  render() {
+const About=()=> {
     return (
       <div className="about-main-container">
         <div className="about-story">
@@ -33,7 +31,6 @@ export default class About extends Component {
               />
             </div>
           </div>
-
           <div className="address-box" style={{ textAlign: "center" }}>
             <h3>Pizzeria Moodi</h3>
             <p>888 Traditional Way</p>
@@ -43,5 +40,5 @@ export default class About extends Component {
         </div>
       </div>
     );
-  }
 }
+ export default About

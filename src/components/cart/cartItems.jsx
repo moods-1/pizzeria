@@ -13,11 +13,12 @@ const {cart, decrement, increment, removeItem} = useStateContext();
           {cartData.name}
         </div>
         <div className="cart-column" id="cart-pizza-price">
-          <div className="hide-mobile d-none">Price: &nbsp;</div>$
+          <div>Price: &nbsp;</div>$
           {cartData.price}
         </div>
         <div className="cart-column" id="cart-pizza-quantity">
-          <div className="hide-mobile d-none">Qty: &nbsp;</div>
+          <div>Qty: &nbsp;</div>
+          <div>
           <button
             className="cart-adjustor"
             onClick={() => {
@@ -35,6 +36,7 @@ const {cart, decrement, increment, removeItem} = useStateContext();
           >
             +
           </button>
+          </div> 
         </div>
         <div className="cart-column" id="cart-remove-box">
           <i
@@ -46,7 +48,7 @@ const {cart, decrement, increment, removeItem} = useStateContext();
           />
         </div>
         <div className="cart-column" id="cart-pie-total">
-          <div className="hide-mobile d-none">Total: &nbsp;</div>$
+          <div>Total: &nbsp;</div>$
           {cartData.total}
         </div>
       </div>

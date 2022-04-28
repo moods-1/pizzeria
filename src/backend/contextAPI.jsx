@@ -14,6 +14,7 @@ export const StateContext = ({ children }) => {
     phone: "",
     empty: true,
   });
+  const [linkId, setLinkId] = useState(0);
 
   const getItem = (id) => {
     const product = state.products.find((item) => item.id === id);
@@ -90,6 +91,9 @@ export const StateContext = ({ children }) => {
     }
   };
 
+  const addLinkId=(id)=> setLinkId(id);
+  const removeLinkId=()=> setLinkId(null);
+
   useEffect(() => {
     let subtotal = 0;
     state.cart.map((item) => (subtotal += item.total));
@@ -107,6 +111,9 @@ export const StateContext = ({ children }) => {
         removeItem,
         customerDetails,
         emptyCart,
+        addLinkId,
+        removeLinkId,
+        linkId
       }}
     >
       {children}

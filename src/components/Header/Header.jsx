@@ -10,9 +10,8 @@ import $ from "jquery";
 
 function Header() {
   const [burgerTracker, setBurgerTracker] = useState(true);
-  const [linkId, setLinkId] = useState(0);
   const burgerSource = burgerTracker ? burger : fries;
-  const { cart: cartItems } = useStateContext();
+  const { cart: cartItems, addLinkId, linkId, removeLinkId } = useStateContext();
 
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
@@ -38,7 +37,7 @@ function Header() {
 
   const handleCartClick = () => {
     $(".nav-list").removeClass("nav-shift");
-    setLinkId("");
+    removeLinkId();
     setBurgerTracker(true);
   };
 
@@ -65,7 +64,7 @@ function Header() {
               <Link
                 to={route}
                 key={id}
-                onClick={() => setLinkId(id)}
+                onClick={() => addLinkId(id)}
                 style={{ textDecoration: "none" }}
               >
                 <li
