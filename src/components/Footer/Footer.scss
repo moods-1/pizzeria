@@ -3,11 +3,21 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     bottom: 0;
     width: 100vw;
-    height: 7vh;
+    min-height: 7vh;
     max-height: 120px;
     background: #000;
     color: #FFF;
     font-size: 16px;
+    padding: 20px;
+    .footer-social{
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      i{
+        cursor: pointer;
+      }
+    }
   }

@@ -66,6 +66,7 @@ nav {
   color: rgb(0, 145, 255);
 }
 .burger-box {
+  display: none;
   width: 25px;
   height: 20px;
   margin-right: 10px;
@@ -100,6 +101,9 @@ nav {
   .top-nav {
     display: flex;
     justify-content: flex-end;
+  }
+  .burger-box{
+    display: block;
   }
   .nav-list {
     position: absolute;

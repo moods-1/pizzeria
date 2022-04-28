@@ -11,7 +11,12 @@ import $ from "jquery";
 function Header() {
   const [burgerTracker, setBurgerTracker] = useState(true);
   const burgerSource = burgerTracker ? burger : fries;
-  const { cart: cartItems, addLinkId, linkId, removeLinkId } = useStateContext();
+  const {
+    cart: cartItems,
+    addLinkId,
+    linkId,
+    removeLinkId,
+  } = useStateContext();
 
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
@@ -42,16 +47,16 @@ function Header() {
   };
 
   useEffect(() => {
-    const burgerBox = $(".burger-box")[0];
-    window.innerWidth <= 767 && burgerBox.classList.remove("d-none");
     window.addEventListener("resize", () => {
-      if (window.innerWidth <= 767) burgerBox.classList.remove("d-none");
-      else {
-        burgerBox.classList.add("d-none");
+      if (window.innerWidth >= 767) {
         setBurgerTracker(true);
         $(".nav-list").removeClass("nav-shift");
+        $(".nav-list li").each(function () {
+          $(this).css({ animation: "" });
+        });
       }
     });
+    return () => window.removeEventListener("resize", () => {});
   });
 
   return (
@@ -76,7 +81,7 @@ function Header() {
             ))}
           </ul>
         </nav>
-        <div className="burger-box d-none" onClick={burgerToggle}>
+        <div className="burger-box" onClick={burgerToggle}>
           <img src={burgerSource} alt="burger" />
         </div>
         <ul>
