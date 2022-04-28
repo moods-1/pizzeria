@@ -14,9 +14,13 @@ const CheckoutForm = (props) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let localValue = value;
+    if(name === "phone"){
+      localValue = value.replaceAll(/[^0-9]/g,"");
+    }
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: localValue,
     }));
   };
 
