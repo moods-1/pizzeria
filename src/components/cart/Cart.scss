@@ -171,10 +171,12 @@
     grid-area: r;
   }
 }
-@media (max-width: 414px) {
+@media (max-width: 420px) {
   .cart-row{
-    width: 95% !important;
+    width: 80% !important;
     border-radius: 10px;
+    color: #FFF;
+    background: #000;
   }
   .horizontal-flex {
     grid-template-areas:
@@ -185,14 +187,11 @@
       "t t"
       "r r";
   }
-  #cart-pizza-name {
+  #cart-pizza-name {    
     grid-area: n;
   }
   #cart-image-box {
     grid-area: i;
-  }
-  #cart-image-box img {
-    width: 35%;
   }
   #cart-pizza-price {
     grid-area: p;
@@ -207,6 +206,6 @@
     grid-area: r;
   }
   #cart-image-box img {
-    width: 45%;
+    width: 65%;
   }
 }

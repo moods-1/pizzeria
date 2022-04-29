@@ -11,9 +11,11 @@ header {
   align-items: baseline;
   overflow: hidden;
   z-index: 10;
-}
-header h1 {
-  font-size: 2.5em;
+  .header-brand a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
 }
 .top-nav {
   display: flex;
@@ -91,9 +93,6 @@ nav {
 @media (max-width: 767px) {
   header {
     align-items: center;
-    h1 {
-      font-size: 1.5em;
-    }
   }
   .horizontal-nav {
     width: 0px;
@@ -101,8 +100,9 @@ nav {
   .top-nav {
     display: flex;
     justify-content: flex-end;
+    width: 80px;
   }
-  .burger-box{
+  .burger-box {
     display: block;
   }
   .nav-list {
@@ -136,6 +136,9 @@ nav {
 @media (max-width: 600px) {
   header {
     padding: 10px 20px;
+    .header-brand a {
+      font-size: 16px;
+    }
   }
   .top-nav {
     width: 30%;
@@ -158,7 +161,19 @@ nav {
     transform: scale(0.8);
   }
 }
+@media (max-width: 450px) {
+  header {
+    .header-brand a {
+      font-size: 14px;
+    }
+  }
+}
 @media (max-width: 320px) {
+  header {
+    .header-brand a {
+      font-size: 12px;
+    }
+  }
   .home-showcase {
     height: 50vh;
   }

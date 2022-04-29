@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { Link, useHistory } from "react-router-dom";
 import burger from "../../images/burger.png";
 import fries from "../../images/fries.png";
 import cart from "../../images/cart.png";
@@ -10,6 +10,7 @@ import $ from "jquery";
 
 function Header() {
   const [burgerTracker, setBurgerTracker] = useState(true);
+  const history = useHistory();
   const burgerSource = burgerTracker ? burger : fries;
   const {
     cart: cartItems,
@@ -17,7 +18,7 @@ function Header() {
     linkId,
     removeLinkId,
   } = useStateContext();
-  
+
   const burgerToggle = () => {
     $(".nav-list").toggleClass("nav-shift");
     $(".nav-list li").each(function (index) {
@@ -59,14 +60,30 @@ function Header() {
     return () => window.removeEventListener("resize", () => {});
   });
 
+  const handlePath = useCallback(
+    (path) => {
+      return addLinkId(path in headerObject ? headerObject[path] : null);
+    },
+    [addLinkId]
+  );
+
+  // Account for browser navigation buttons
+  useEffect(() => {
+    return history.listen((location) => {
+      let path = location.pathname;
+      handlePath(path);
+    });
+  }, [addLinkId, history, handlePath]);
+
+  // Account for browser refresh
   useEffect(() => {
     let path = window.location.pathname;
-    addLinkId(path in headerObject ? headerObject[path] : null);
-  }, [addLinkId]);
+    handlePath(path);
+  });
 
   return (
     <header>
-      <h1>Pizzeria Moodi</h1>
+      <div className="header-brand"><Link to="/"><h1>Pizzeria Moodi</h1></Link></div>
       <div className="top-nav">
         <nav className="horizontal-nav">
           <ul className="nav-list" onClick={(e) => handleLink(e)}>
