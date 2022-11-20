@@ -28,6 +28,7 @@ const About=()=> {
                 allowFullScreen=""
                 aria-hidden="false"
                 tabIndex="0"
+                onLoadStart={()=> console.log("Loading ...")}
               />
             </div>
           </div>

@@ -30,7 +30,6 @@ const Menu = () => {
             </div>
             <div>
               <button
-                id="cart-button"
                 onClick={() => {
                   addToCart(product.id);
                 }}

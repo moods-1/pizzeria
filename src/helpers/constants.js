@@ -16,8 +16,3 @@ export const headerLinks = [
   },
 ];
 
-export const headerObject = {
-  "/": 0,
-  "/menu": 1,
-  "/about": 2,
-};
