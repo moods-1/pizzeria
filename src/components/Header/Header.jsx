@@ -12,7 +12,6 @@ function Header() {
 	const [burgerTracker, setBurgerTracker] = useState(true);
 	const burgerSource = burgerTracker ? Burger : Fries;
 	const { cart: cartItems } = useStateContext();
-	console.log({ cartItems });
 
 	const burgerToggle = () => {
 		$('.nav-list').toggleClass('nav-shift');
@@ -67,7 +66,7 @@ function Header() {
 						{headerLinks.map(({ id, title, route }) => (
 							<NavLink
 								to={route}
-								exact={true}
+								// exact={true}
 								key={id}
 								className='nav-list-item'
 							>

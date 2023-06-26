@@ -11,24 +11,23 @@ import {
 	Pay,
 } from './pages';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 	return (
 		<Router>
 			<div className='main-container'>
 				<Header />
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route path='/menu' component={Menu} />
-					<Route path='/about' component={About} />
-					<Route path='/cart' component={Cart} />
-					<Route path='/checkout' component={Checkout} />
-					<Route path='/pay' component={Pay} />
-					<Route path='/confirmation' component={Confirmation} />
-					<Route path='*' component={Error404} />
-				</Switch>
+				<Routes>
+					<Route exact path='/' element={<Home />} />
+					<Route path='/menu' element={<Menu />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='/checkout' element={<Checkout />} />
+					<Route path='/pay' element={<Pay />} />
+					<Route path='/confirmation' element={<Confirmation />} />
+					<Route path='*' element={<Error404 />} />
+				</Routes>
 				<Footer />
 			</div>
 		</Router>

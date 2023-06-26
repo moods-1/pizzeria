@@ -14,9 +14,12 @@ const Menu = () => {
 				{products.map((product) => (
 					<div key={product.id} className='menu-box' id='menu-box1'>
 						<h3>{product.name}</h3>
-						<img src={product.image} alt='pie' />
+						<div className='menu-image-box'>
+							<img src={product.image} alt='pie' />
+						</div>
 						<div className='description-box'>
 							<p>{product.description}</p>
+						</div>
 							<div className='serving-price'>
 								<p>
 									<strong>Serves:</strong>
@@ -27,7 +30,6 @@ const Menu = () => {
 									<span> ${product.price}</span>
 								</p>
 							</div>
-						</div>
 						<div>
 							<button
 								onClick={() => {

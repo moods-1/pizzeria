@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PayPalButton } from 'react-paypal-button-v2';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { useStateContext } from '../../context/contextAPI';
 import Confirmation from '../Confirmation/Confirmation';
 import './Pay.scss';
@@ -74,13 +74,22 @@ const Pay = () => {
 							<p>password: Pizzeria1</p>
 						</div>
 						<div className='payPal-buttons-box'>
-							<PayPalButton
-								amount={(cartSubtotal * 1.13).toFixed(2)}
-								style={{ color: 'blue' }}
-								currency='CAD'
-								shippingPreference='NO_SHIPPING' // default is "GET_FROM_FILE"
-								onApprove={(data, actions) => onApprove(data, actions)}
-							/>
+							<PayPalScriptProvider options={{ clientId: 'test' }}>
+								<PayPalButtons
+									createOrder={(data, actions) => {
+										return actions.order.create({
+											purchase_units: [
+												{
+													amount: {
+														value: (cartSubtotal * 1.13).toFixed(2),
+													},
+												},
+											],
+										});
+									}}
+									onApprove={(data, actions) => onApprove(data, actions)}
+								/>
+							</PayPalScriptProvider>
 						</div>
 					</div>
 				)}

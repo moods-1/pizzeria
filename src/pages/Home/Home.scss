@@ -75,7 +75,7 @@
   }
   .gallery-box {
     width: 270px;
-    min-height: 370px;
+    min-height: 350px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -90,12 +90,20 @@
       font-size: 22px;
       font-weight: bold;
     }
-    img {
+    .gallery-image-box {
+      display: grid;
+      place-items: center;
+      height: 140px;
       width: 70%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
     }
     .gallery-box-story {
-      text-align: center;
+      text-align: left;
       font-size: 18px;
+      height: 80px;
     }
     &:hover {
       box-shadow: 3px 3px 20px #aaa;
