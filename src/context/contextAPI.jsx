@@ -101,7 +101,6 @@ export const StateContext = ({ children }) => {
 	useEffect(() => {
 		let subtotal = 0;
 		state.cart.map((item) => (subtotal += item.total));
-		//const total = subtotal;
 		setState((prevState) => ({ ...prevState, cartSubtotal: subtotal }));
 	}, [state.cart]);
 

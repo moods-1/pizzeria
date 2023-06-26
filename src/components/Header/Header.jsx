@@ -64,12 +64,7 @@ function Header() {
 				<nav className='horizontal-nav'>
 					<ul className='nav-list' onClick={(e) => handleLink(e)}>
 						{headerLinks.map(({ id, title, route }) => (
-							<NavLink
-								to={route}
-								// exact={true}
-								key={id}
-								className='nav-list-item'
-							>
+							<NavLink to={route} key={id} className='nav-list-item'>
 								{title}
 							</NavLink>
 						))}
