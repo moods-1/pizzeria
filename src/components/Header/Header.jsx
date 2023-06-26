@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Burger from '../../images/burger.png';
 import Fries from '../../images/fries.png';
 import Cart from '../../images/cart.png';
-import { useStateContext } from '../../backend/contextAPI';
+import { useStateContext } from '../../context/contextAPI';
 import { headerLinks } from '../../helpers/constants';
 import './Header.scss';
 import $ from 'jquery';
@@ -12,6 +12,7 @@ function Header() {
 	const [burgerTracker, setBurgerTracker] = useState(true);
 	const burgerSource = burgerTracker ? Burger : Fries;
 	const { cart: cartItems } = useStateContext();
+	console.log({ cartItems });
 
 	const burgerToggle = () => {
 		$('.nav-list').toggleClass('nav-shift');
