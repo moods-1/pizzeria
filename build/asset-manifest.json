@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ad6df819.css",
-    "main.js": "/static/js/main.e6a05a2b.js",
+    "main.css": "/static/css/main.f6432841.css",
+    "main.js": "/static/js/main.6fa76338.js",
     "static/media/pizzasInOven.jpg": "/static/media/pizzasInOven.c1da4c75167e34728fa1.jpg",
     "static/media/pizzasInOvenMobile.jpg": "/static/media/pizzasInOvenMobile.55eec84df4fd262310bf.jpg",
     "static/media/whiteMarble.jpg": "/static/media/whiteMarble.24501dd8fc178b26df03.jpg",
@@ -10,13 +10,14 @@
     "static/media/lostMan.png": "/static/media/lostMan.f5d9cea7fb7c7bfd8a82.png",
     "static/media/womanSmiling.jpg": "/static/media/womanSmiling.e21be6db35ffc4ba8558.jpg",
     "static/media/manSmiling.jpg": "/static/media/manSmiling.5d2c4821d1529a1e2296.jpg",
+    "static/media/emptyCartBlue.png": "/static/media/emptyCartBlue.0381cbc73f49f1180a89.png",
     "static/media/cart.png": "/static/media/cart.42fd4e7dc45188309b50.png",
     "index.html": "/index.html",
-    "main.ad6df819.css.map": "/static/css/main.ad6df819.css.map",
-    "main.e6a05a2b.js.map": "/static/js/main.e6a05a2b.js.map"
+    "main.f6432841.css.map": "/static/css/main.f6432841.css.map",
+    "main.6fa76338.js.map": "/static/js/main.6fa76338.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad6df819.css",
-    "static/js/main.e6a05a2b.js"
+    "static/css/main.f6432841.css",
+    "static/js/main.6fa76338.js"
   ]
 }
