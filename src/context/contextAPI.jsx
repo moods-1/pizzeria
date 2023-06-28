@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, {
+	createContext,
+	useContext,
+	useState,
+	useEffect,
+	useCallback,
+} from 'react';
 import { data } from './data';
 
 const Context = createContext();
@@ -15,10 +21,13 @@ export const StateContext = ({ children }) => {
 		empty: true,
 	});
 
-	const getItem = useCallback((id) => {
-		const product = state.products.find((item) => item.id === id);
-		return product;
-	},[state.products]);
+	const getItem = useCallback(
+		(id) => {
+			const product = state.products.find((item) => item.id === id);
+			return product;
+		},
+		[state.products]
+	);
 
 	const addToCart = (id) => {
 		let tempProduct = [...state.products];
@@ -55,31 +64,20 @@ export const StateContext = ({ children }) => {
 		}));
 	};
 
-	const increment = (id) => {
+	const handleCartQty = (id, qty) => {
 		let tempCart = [...state.cart];
 		const selectedProduct = tempCart.find((item) => item.id === id);
 		const index = tempCart.indexOf(selectedProduct);
 		const product = tempCart[index];
-		product.count = product.count + 1;
-		product.total = product.count * product.price;
-		const newCart = [...tempCart];
-		localStorage.setItem('localCart', JSON.stringify(newCart));
-		setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
-	};
-
-	const decrement = (id) => {
-		let tempCart = [...state.cart];
-		const selectedProduct = tempCart.find((item) => item.id === id);
-		const index = tempCart.indexOf(selectedProduct);
-		const product = tempCart[index];
-		if (product.count > 0) {
-			product.count = product.count - 1;
+		if (qty > 0) {
+			product.count = qty;
 			product.total = product.count * product.price;
 			const newCart = [...tempCart];
 			localStorage.setItem('localCart', JSON.stringify(newCart));
 			setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
+		} else {
+			removeItem(selectedProduct.id);
 		}
-		product.count === 0 && removeItem(selectedProduct.id);
 	};
 
 	const customerDetails = (firstName, lastName, email, phone) => {
@@ -138,9 +136,9 @@ export const StateContext = ({ children }) => {
 			...prevState,
 			cart: [...cart],
 			products: [...localProducts],
-			subtotal
+			subtotal,
 		}));
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
@@ -148,8 +146,9 @@ export const StateContext = ({ children }) => {
 			value={{
 				...state,
 				addToCart,
-				increment,
-				decrement,
+				// increment,
+				// decrement,
+				handleCartQty,
 				removeItem,
 				customerDetails,
 				emptyCart,

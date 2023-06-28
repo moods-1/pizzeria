@@ -2,7 +2,14 @@ import React from 'react';
 import { useStateContext } from '../../context/contextAPI';
 
 const CartItems = () => {
-	const { cart, decrement, increment, removeItem } = useStateContext();
+	const { cart, removeItem, handleCartQty } = useStateContext();
+
+	const handleQty = (value, id, type) => {
+		let num = value;
+		type === 'increment' ? num++ : num--;
+		handleCartQty(id, num);
+	};
+	
 	return cart.map((cartData) => (
 		<div key={cartData.id}>
 			<div className='horizontal-flex cart-row'>
@@ -21,7 +28,7 @@ const CartItems = () => {
 						<div
 							className='cart-adjustor'
 							onClick={() => {
-								decrement(cartData.id);
+								handleQty(cartData.count, cartData.id, 'decrement');
 							}}
 						>
 							-
@@ -30,7 +37,7 @@ const CartItems = () => {
 						<div
 							className='cart-adjustor'
 							onClick={() => {
-								increment(cartData.id);
+								handleQty(cartData.count, cartData.id, 'increment');
 							}}
 						>
 							+
