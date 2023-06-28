@@ -1,0 +1,21 @@
+@use '../../scss/variables';
+
+.empty-content {
+	width: auto;
+	max-width: 280px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	button {
+		min-width: 120px;
+        font-size: 14px;
+		background: variables.$main-blue;
+		&:hover {
+			background: variables.$dark-blue;
+		}
+	}
+	h4 {
+		text-align: center;
+	}
+}

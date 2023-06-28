@@ -10,8 +10,8 @@ import {
 	Error404,
 	Pay,
 } from './pages';
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.scss';
 
 function App() {
 	return (

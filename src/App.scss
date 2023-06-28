@@ -1,0 +1,18 @@
+.main-container {
+	position: relative;
+	width: 100vw;
+	max-width: 1920px;
+	min-width: 290px;
+	min-height: 100vh;
+	background: black;
+}
+button {
+	padding: 8px;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+	outline-style: none;
+	cursor: pointer;
+	transition: 300ms ease;
+	color: #ffffff;
+}

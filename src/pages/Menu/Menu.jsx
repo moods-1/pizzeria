@@ -1,9 +1,10 @@
 import React from 'react';
 import { useStateContext } from '../../context/contextAPI';
 import './Menu.scss';
+import Button from '../../components/Button/Button';
 
 const Menu = () => {
-	const { products, addToCart } = useStateContext();
+	const { products, addToCart, removeItem } = useStateContext();
 
 	return (
 		<div className='menu-main-container'>
@@ -20,25 +21,31 @@ const Menu = () => {
 						<div className='description-box'>
 							<p>{product.description}</p>
 						</div>
-							<div className='serving-price'>
-								<p>
-									<strong>Serves:</strong>
-									<span> {product.serves}</span>
-								</p>
-								<p>
-									<strong>Price:</strong>
-									<span> ${product.price}</span>
-								</p>
-							</div>
+						<div className='serving-price'>
+							<p>
+								<strong>Serves:</strong>
+								<span> {product.serves}</span>
+							</p>
+							<p>
+								<strong>Price:</strong>
+								<span> ${product.price}</span>
+							</p>
+						</div>
 						<div>
-							<button
-								onClick={() => {
-									addToCart(product.id);
-								}}
-								disabled={product.inCart}
-							>
-								{product.inCart ? 'In Cart' : 'Add to cart'}
-							</button>
+							{product.inCart ? (
+								<Button
+									label='Remove from cart'
+									background='red'
+									width='140px'
+									clickFunction={() => removeItem(product.id)}
+								/>
+							) : (
+								<Button
+									label='Add to cart'
+									width='140px'
+									clickFunction={() => addToCart(product.id)}
+								/>
+							)}
 						</div>
 					</div>
 				))}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { data } from './data';
 
 const Context = createContext();
@@ -15,10 +15,10 @@ export const StateContext = ({ children }) => {
 		empty: true,
 	});
 
-	const getItem = (id) => {
+	const getItem = useCallback((id) => {
 		const product = state.products.find((item) => item.id === id);
 		return product;
-	};
+	},[state.products]);
 
 	const addToCart = (id) => {
 		let tempProduct = [...state.products];
@@ -28,10 +28,12 @@ export const StateContext = ({ children }) => {
 		product.count = 1;
 		const price = product.price;
 		product.total = price;
+		const newCart = [...state.cart, product];
+		localStorage.setItem('localCart', JSON.stringify(newCart));
 		setState((prevState) => ({
 			...prevState,
 			products: tempProduct,
-			cart: [...state.cart, product],
+			cart: [...newCart],
 		}));
 	};
 
@@ -44,9 +46,11 @@ export const StateContext = ({ children }) => {
 		removedProduct.inCart = false;
 		removedProduct.total = 0;
 		removedProduct.count = 0;
+		const newCart = [...tempCart];
+		localStorage.setItem('localCart', JSON.stringify(newCart));
 		setState((prevState) => ({
 			...prevState,
-			cart: [...tempCart],
+			cart: [...newCart],
 			products: [...tempProduct],
 		}));
 	};
@@ -58,6 +62,8 @@ export const StateContext = ({ children }) => {
 		const product = tempCart[index];
 		product.count = product.count + 1;
 		product.total = product.count * product.price;
+		const newCart = [...tempCart];
+		localStorage.setItem('localCart', JSON.stringify(newCart));
 		setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
 	};
 
@@ -69,6 +75,8 @@ export const StateContext = ({ children }) => {
 		if (product.count > 0) {
 			product.count = product.count - 1;
 			product.total = product.count * product.price;
+			const newCart = [...tempCart];
+			localStorage.setItem('localCart', JSON.stringify(newCart));
 			setState((prevState) => ({ ...prevState, cart: [...tempCart] }));
 		}
 		product.count === 0 && removeItem(selectedProduct.id);
@@ -89,6 +97,8 @@ export const StateContext = ({ children }) => {
 			inCart: false,
 		}));
 		if (state.empty) {
+			localStorage.removeItem('localCart');
+			localStorage.removeItem('localCartSubtotal');
 			setState((prevState) => ({
 				...prevState,
 				products: localProducts,
@@ -101,8 +111,37 @@ export const StateContext = ({ children }) => {
 	useEffect(() => {
 		let subtotal = 0;
 		state.cart.map((item) => (subtotal += item.total));
+		localStorage.setItem('localCartSubtotal', subtotal);
 		setState((prevState) => ({ ...prevState, cartSubtotal: subtotal }));
 	}, [state.cart]);
+
+	useEffect(() => {
+		let cart = [];
+		let subtotal = state.subtotal;
+		const localProducts = [...state.products];
+		if (localStorage.getItem('localCart')) {
+			let localCart = JSON.parse(localStorage.getItem('localCart'));
+			if (typeof localCart === 'object') {
+				cart = localCart;
+				cart.forEach((c) => {
+					let targetIndex = localProducts.indexOf(getItem(c.id));
+					localProducts[targetIndex].inCart = true;
+				});
+			} else {
+				cart = [];
+			}
+		}
+		if (localStorage.getItem('localCartSubtotal')) {
+			subtotal = JSON.parse(localStorage.getItem('localCartSubtotal'));
+		}
+		setState((prevState) => ({
+			...prevState,
+			cart: [...cart],
+			products: [...localProducts],
+			subtotal
+		}));
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<Context.Provider

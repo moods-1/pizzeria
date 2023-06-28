@@ -1,197 +1,205 @@
+@use '../../scss/variables';
 
-  .home-showcase {
-    width: 100%;
-    min-height: 100vh;
-    background: url("../../images/pizzasInOven.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-  }
-  .artisan-box {
-    position: relative;
-    top: 300px;
-    width: 100%;
-    min-width: 290px;
-    padding-right: 30px;
-  }
-  #artisan {
-    color: white;
-    position: relative;
-    font-family: "Alex Brush", cursive;
-    font-size: 4em;
-    text-shadow: 2px 2px 5px black;
-    top: 0%;
-    transform: translateX(-500px);
-    animation: artisanSlide 2s forwards;
-  }
-  @keyframes artisanSlide {
-    to {
-      transform: translateX(60px);
-    }
-  }
-  #creation {
-    animation: creationShow 3.5s forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
-  }
-  @keyframes creationShow {
-    to {
-      opacity: 1;
-    }
-  }
-  .home-gallery {
-    background: url("../../images/whiteMarble.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
-  .home-gallery,
-  .profile-gallery {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 120px 0px 80px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, 270px);
-    justify-content: center;
-    align-items: center;
-    color: black;
-  }
-  .home-gallery h1,
-  .profile-gallery h1 {
-    position: absolute;
-    width: 100%;
-    top: 40px;
-    text-align: center;
-    font-size: 30px;
-  }
-  .home-gallery a {
-    color: black;
-    text-decoration: none;
-  }
-  .gallery-box {
-    width: 270px;
-    min-height: 350px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    border: rgba(204, 202, 202, 0.9) solid 1px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px #aaa;
-    background: #fff;
-    transition: 300ms ease;
-    .gallery-box-title {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .gallery-image-box {
-      display: grid;
-      place-items: center;
-      height: 140px;
-      width: 70%;
-      margin: auto;
-      img {
-        width: 100%;
-      }
-    }
-    .gallery-box-story {
-      text-align: left;
-      font-size: 18px;
-      height: 80px;
-    }
-    &:hover {
-      box-shadow: 3px 3px 20px #aaa;
-      transform: translateY(-2px);
-    }
-  }
-  .profile-gallery {
-    background: black;
-    color: white;
-    gap: 35px;
-    grid-template-columns: repeat(auto-fit, 400px);
-  }
-  .profile-box {
-    height: auto;
-    padding: 20px;
-    justify-content: center;
-    text-align: center;
-  }
-  .profile-box img {
-    width: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  .profile-box p {
-    font-size: 20px;
-  }
-  @media (max-width: 1024px) {
-    .home-showcase {
-      height: 30vh;
-    }
-  }
-  @media (max-width: 767px) {
-    .artisan-box {
-      top: 35%;
-      width: 100%;
-      text-align: center;
-    }
-    @keyframes artisanSlide {
-      to {
-        transform: translateX(10px);
-      }
-    }
-    .home-showcase {
-      background: url("../../images/pizzasInOvenMobile.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      overflow: hidden;
-    }
-    .home-gallery div:last-child{
-      display: none;
-    }
-    .gallery-box {
-      height: 330px;
-    }
-    .gallery-box img {
-      width: 80%;
-      text-align: center;
-    }
-    .profile-gallery {
-      gap: 0;
-      padding: 40px 10px 0 10px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .artisan-box {
-      height: 150px;
-      padding-left: 10px;
-      font-size: x-small;
-      text-align: center;
-    }
-    .home-showcase {
-      height: 50vh;
-    }
-    .profile-box {
-      transform: scale(0.8);
-    }
-  }
-  @media (max-width: 320px) {
-    .home-showcase {
-      height: 50vh;
-    }
-    .home-gallery h1,
-    .profile-gallery h1 {
-      font-size: 25px;
-    }
-    .gallery-box p {
-      font-size: 20px;
-    }
-  }
+.home-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+	background-color: navajowhite;
+}
+.home-showcase {
+	width: 100%;
+	min-height: 100vh;
+	background: url('../../images/pizzasInOven.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+}
+.artisan-box {
+	position: relative;
+	top: 300px;
+	width: 100%;
+	min-width: 290px;
+	padding-right: 30px;
+}
+#artisan {
+	color: white;
+	position: relative;
+	font-family: 'Alex Brush', cursive;
+	font-size: 4em;
+	text-shadow: 2px 2px 5px black;
+	top: 0%;
+	transform: translateX(-500px);
+	animation: artisanSlide 2s forwards;
+}
+@keyframes artisanSlide {
+	to {
+		transform: translateX(60px);
+	}
+}
+#creation {
+	animation: creationShow 3.5s forwards;
+	animation-delay: 1.5s;
+	opacity: 0;
+}
+@keyframes creationShow {
+	to {
+		opacity: 1;
+	}
+}
+.home-gallery {
+	background: url('../../images/whiteMarble.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+.home-gallery,
+.profile-gallery {
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 120px 0px 80px;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, 270px);
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+.home-gallery h1,
+.profile-gallery h1 {
+	position: absolute;
+	width: 100%;
+	top: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+.home-gallery a {
+	color: black;
+	text-decoration: none;
+}
+.gallery-box {
+	width: 270px;
+	min-height: 350px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	border: variables.$light-border;
+	border-radius: 5px;
+	box-shadow: variables.$light-shadow;
+	background: #fff;
+	transition: 300ms ease;
+	.gallery-box-title {
+		font-size: 22px;
+		font-weight: bold;
+	}
+	.gallery-image-box {
+		display: grid;
+		place-items: center;
+		height: 140px;
+		width: 70%;
+		margin: auto;
+		img {
+			width: 100%;
+		}
+	}
+	.gallery-box-story {
+		text-align: left;
+		font-size: 18px;
+		height: 80px;
+	}
+	&:hover {
+		box-shadow: 3px 3px 15px #ccc;
+		transform: translateY(-1px);
+	}
+}
+.profile-gallery {
+	background: black;
+	color: white;
+	gap: 35px;
+	grid-template-columns: repeat(auto-fit, 400px);
+}
+.profile-box {
+	height: auto;
+	padding: 20px;
+	justify-content: center;
+	text-align: center;
+}
+.profile-box img {
+	width: 120px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+.profile-box p {
+	font-size: 20px;
+}
+@media (max-width: 1024px) {
+	.home-showcase {
+		height: 30vh;
+	}
+}
+@media (max-width: 767px) {
+	.artisan-box {
+		top: 35%;
+		width: 100%;
+		text-align: center;
+	}
+	@keyframes artisanSlide {
+		to {
+			transform: translateX(10px);
+		}
+	}
+	.home-showcase {
+		background: url('../../images/pizzasInOvenMobile.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		overflow: hidden;
+	}
+	.home-gallery div:last-child {
+		display: none;
+	}
+	.gallery-box {
+		height: 330px;
+	}
+	.gallery-box img {
+		width: 80%;
+		text-align: center;
+	}
+	.profile-gallery {
+		gap: 0;
+		padding: 40px 10px 0 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.artisan-box {
+		height: 150px;
+		padding-left: 10px;
+		font-size: x-small;
+		text-align: center;
+	}
+	.home-showcase {
+		height: 50vh;
+	}
+	.profile-box {
+		transform: scale(0.8);
+	}
+}
+@media (max-width: 320px) {
+	.home-showcase {
+		height: 50vh;
+	}
+	.home-gallery h1,
+	.profile-gallery h1 {
+		font-size: 25px;
+	}
+	.gallery-box p {
+		font-size: 20px;
+	}
+}

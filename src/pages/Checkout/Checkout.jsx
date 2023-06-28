@@ -12,8 +12,8 @@ const initialState = {
 };
 
 const CheckoutForm = (props) => {
-  const [formData, setFormData] = useState(initialState);
-  const navigate = useNavigate();
+	const [formData, setFormData] = useState(initialState);
+	const navigate = useNavigate();
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -52,7 +52,7 @@ const CheckoutForm = (props) => {
 			<form onSubmit={handleSubmit}>
 				<h1>Customer Details</h1>
 				<input
-					autoFocus
+					// autoFocus={!formData.firstName}
 					required
 					name='firstName'
 					id='firstName'

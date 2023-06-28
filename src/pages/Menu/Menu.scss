@@ -1,3 +1,5 @@
+@use '../../scss/variables';
+
 .menu-main-container {
 	overflow-x: hidden;
 	position: relative;
@@ -34,8 +36,9 @@
 	padding: 20px;
 	margin: auto;
 	background: #fff;
-	border-radius: 10px;
-	box-shadow: 3px 3px 15px #999;
+	border: variables.$light-border;
+	border-radius: 5px;
+	box-shadow: variables.$light-shadow;
 	transition: 300ms ease;
 	.description-box {
 		text-align: left;
@@ -60,16 +63,19 @@
 		}
 	}
 	button {
-		padding: 10px;
-		color: #fff;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		background: rgb(0, 145, 255);
+		min-width: 110px;
+		background: variables.$main-blue;
+		&:hover {
+			background: variables.$dark-blue;
+		}
+		&:disabled {
+			cursor: none;
+			background: variables.$dark-blue;
+		}
 	}
 	&:hover {
-		box-shadow: 3px 3px 20px #aaa;
-		transform: translateY(-2px);
+		box-shadow: 3px 3px 15px #ccc;
+		transform: translateY(-1px);
 	}
 }
 @media (max-width: 767px) {

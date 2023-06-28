@@ -17,24 +17,24 @@ const CartItems = () => {
 				</div>
 				<div className='cart-column' id='cart-pizza-quantity'>
 					<div>Qty: &nbsp;</div>
-					<div>
-						<button
+					<div className='cart-quantity-box'>
+						<div
 							className='cart-adjustor'
 							onClick={() => {
 								decrement(cartData.id);
 							}}
 						>
 							-
-						</button>
+						</div>
 						<span id='cart-qty'>{cartData.count}</span>
-						<button
+						<div
 							className='cart-adjustor'
 							onClick={() => {
 								increment(cartData.id);
 							}}
 						>
 							+
-						</button>
+						</div>
 					</div>
 				</div>
 				<div className='cart-column' id='cart-remove-box'>
@@ -45,6 +45,7 @@ const CartItems = () => {
 							removeItem(cartData.id);
 						}}
 					/>
+					<button className='cart-remove-button'>Remove</button>
 				</div>
 				<div className='cart-column' id='cart-pie-total'>
 					<div>Total: &nbsp;</div>${cartData.total}

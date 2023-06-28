@@ -3,7 +3,7 @@ import React from 'react'
 const CartTotal = ({cartSubtotal}) => {
     return (     
         <div className="cart-total-box">
-            <div id="cart-total-price">
+            <div className="cart-total-price">
                 <div className="total-title">Subtotal total :</div>
                 <div className="total-money">${(cartSubtotal).toFixed(2)}</div>
                 <div className="total-title">GST/HST :</div>
