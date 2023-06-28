@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6432841.css",
-    "main.js": "/static/js/main.6fa76338.js",
+    "main.css": "/static/css/main.2d0a375a.css",
+    "main.js": "/static/js/main.ca93f660.js",
     "static/media/pizzasInOven.jpg": "/static/media/pizzasInOven.c1da4c75167e34728fa1.jpg",
     "static/media/pizzasInOvenMobile.jpg": "/static/media/pizzasInOvenMobile.55eec84df4fd262310bf.jpg",
     "static/media/whiteMarble.jpg": "/static/media/whiteMarble.24501dd8fc178b26df03.jpg",
@@ -13,11 +13,11 @@
     "static/media/emptyCartBlue.png": "/static/media/emptyCartBlue.0381cbc73f49f1180a89.png",
     "static/media/cart.png": "/static/media/cart.42fd4e7dc45188309b50.png",
     "index.html": "/index.html",
-    "main.f6432841.css.map": "/static/css/main.f6432841.css.map",
-    "main.6fa76338.js.map": "/static/js/main.6fa76338.js.map"
+    "main.2d0a375a.css.map": "/static/css/main.2d0a375a.css.map",
+    "main.ca93f660.js.map": "/static/js/main.ca93f660.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6432841.css",
-    "static/js/main.6fa76338.js"
+    "static/css/main.2d0a375a.css",
+    "static/js/main.ca93f660.js"
   ]
 }

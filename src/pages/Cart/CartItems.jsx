@@ -9,7 +9,7 @@ const CartItems = () => {
 		type === 'increment' ? num++ : num--;
 		handleCartQty(id, num);
 	};
-	
+
 	return cart.map((cartData) => (
 		<div key={cartData.id}>
 			<div className='horizontal-flex cart-row'>

@@ -146,8 +146,6 @@ export const StateContext = ({ children }) => {
 			value={{
 				...state,
 				addToCart,
-				// increment,
-				// decrement,
 				handleCartQty,
 				removeItem,
 				customerDetails,

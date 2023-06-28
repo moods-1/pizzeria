@@ -15,6 +15,7 @@
 .cart-row {
 	background: #fff;
 	padding: 10px;
+	user-select: none;
 }
 #cart-H1 {
 	font-size: 2.5em;
@@ -31,7 +32,10 @@
 .cart-remove-button {
 	display: none;
 	width: 100%;
-	background-color: variables.$main-red;
+	background-color: variables.$main-black;
+	&:hover {
+		background: variables.$main-red;
+	}
 }
 
 .horizontal-flex {
@@ -65,11 +69,11 @@
 		width: 25px;
 		height: 25px;
 		color: #ffffff;
-		background: variables.$main-blue;
-		border-radius: 5px;
+		border-radius: 50%;
 		cursor: pointer;
+		background: variables.$main-black;
 		&:hover {
-			background: variables.$dark-blue;
+			background: variables.$light-black;
 		}
 	}
 }
