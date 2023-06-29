@@ -10,10 +10,14 @@ import {
 	Error404,
 	Pay,
 } from './pages';
+import { Mixpanel } from './components/Mixpanel';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 
 function App() {
+	Mixpanel.track('Pizzeria home page accessed.', {
+		action: 'Pizzeria home page accessed.',
+	});
 	return (
 		<Router>
 			<div className='main-container'>

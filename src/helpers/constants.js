@@ -16,3 +16,4 @@ export const headerLinks = [
   },
 ];
 
+export const MIXPANEL_TOKEN = process.env.REACT_APP_MIXPANEL_TOKEN;
