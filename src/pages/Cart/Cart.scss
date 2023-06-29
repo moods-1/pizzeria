@@ -23,7 +23,7 @@
 	h1{
 		font-size: 2.5em;
 	}
-	p {
+	h5 {
 		color: #f00;
 	}
 	padding: 10px 0;
@@ -116,13 +116,22 @@
 	width: auto;
 	text-align: right;
 }
-#checkout-button {
+.checkout-button {
 	width: 230px;
 	margin-bottom: 20px;
 	font-size: 15px;
 	background: variables.$main-blue;
 	&:hover {
 		background: variables.$dark-blue;
+	}
+}
+.continue-button {
+	width: 230px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	background: variables.$main-black;
+	&:hover {
+		background: variables.$light-black;
 	}
 }
 .empty-cart {

@@ -2,7 +2,7 @@ import { useStateContext } from '../../context/contextAPI';
 import CartHeaders from './CartHeaders';
 import CartItems from './CartItems';
 import CartTotal from './CartTotal';
-import CheckoutButton from './CheckoutButton';
+import LinkButton from './LinkButton';
 import { EmptyMeassage } from '../../components';
 import './Cart.scss';
 
@@ -15,12 +15,14 @@ const Cart = () => {
 				<div className='main-cart-container'>
 					<div className='cart-head'>
 						<h1>Your Cart</h1>
-						<p>*Maximum 10 pizzas</p>
+						<h5>*Maximum 10 pizzas</h5>
 					</div>
 					<CartHeaders />
 					<CartItems />
 					<CartTotal cartSubtotal={cartSubtotal} />
-					<CheckoutButton />
+					<LinkButton page='checkout' label="Checkout" className="checkout-button" />
+					<br />
+					<LinkButton page='menu' label="Continue Shopping" className="continue-button" />
 				</div>
 			) : (
 				<EmptyMeassage message='Currently, your cart is empty.' />
