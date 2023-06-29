@@ -15,8 +15,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 
 function App() {
-	Mixpanel.track('Pizzeria home page accessed.', {
-		action: 'Pizzeria home page accessed.',
+	Mixpanel.track('Pizzeria app accessed.', {
+		action: 'Pizzeria app accessed.',
 	});
 	return (
 		<Router>
