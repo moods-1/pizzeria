@@ -1,3 +1,19 @@
+@-moz-keyframes navEaseIn {
+	to {
+		transform: translateX(0%);
+	}
+}
+@-webkit-keyframes navEaseIn {
+	to {
+		transform: translateX(0%);
+	}
+}
+@keyframes navEaseIn {
+	to {
+		transform: translateX(0%);
+	}
+}
+
 header {
 	background: black;
 	color: white;
@@ -120,9 +136,8 @@ nav {
 		right: 0;
 		transform: translateX(400px);
 		transition: 0.3s ease;
-		width: 30%;
-		height: 30vh;
-		min-height: 200px;
+		width: 130px;
+		height: 180px;
 		background: black;
 		z-index: -1;
 	}
@@ -132,11 +147,6 @@ nav {
 	.nav-shift {
 		z-index: 1;
 		transform: translateX(0%);
-	}
-	@keyframes navEaseIn {
-		to {
-			transform: translateX(0%);
-		}
 	}
 }
 @media (max-width: 600px) {
@@ -154,11 +164,6 @@ nav {
 		padding-left: 10px;
 		font-size: x-small;
 		text-align: center;
-	}
-	.nav-list {
-		width: 40%;
-		height: 40vh;
-		font-size: 18px;
 	}
 	.home-showcase {
 		height: 50vh;

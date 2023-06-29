@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d0a375a.css",
+    "main.css": "/static/css/main.796b3a66.css",
     "main.js": "/static/js/main.ca93f660.js",
     "static/media/pizzasInOven.jpg": "/static/media/pizzasInOven.c1da4c75167e34728fa1.jpg",
     "static/media/pizzasInOvenMobile.jpg": "/static/media/pizzasInOvenMobile.55eec84df4fd262310bf.jpg",
@@ -13,11 +13,11 @@
     "static/media/emptyCartBlue.png": "/static/media/emptyCartBlue.0381cbc73f49f1180a89.png",
     "static/media/cart.png": "/static/media/cart.42fd4e7dc45188309b50.png",
     "index.html": "/index.html",
-    "main.2d0a375a.css.map": "/static/css/main.2d0a375a.css.map",
+    "main.796b3a66.css.map": "/static/css/main.796b3a66.css.map",
     "main.ca93f660.js.map": "/static/js/main.ca93f660.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d0a375a.css",
+    "static/css/main.796b3a66.css",
     "static/js/main.ca93f660.js"
   ]
 }

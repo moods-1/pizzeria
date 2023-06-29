@@ -1,0 +1,23 @@
+@-moz-keyframes spin {
+	from {
+		transform: rotate(-360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(-360deg);
+	}
+}
+
+.loader {
+	border: 5px solid #fff;
+	border-radius: 50%;
+	animation: spin 1s infinite;
+}

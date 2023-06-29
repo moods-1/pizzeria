@@ -13,8 +13,9 @@ const Cart = () => {
 		<>
 			{cart.length ? (
 				<div className='main-cart-container'>
-					<div>
-						<h1 id='cart-H1'>Your Cart</h1>
+					<div className='cart-head'>
+						<h1>Your Cart</h1>
+						<p>*Maximum 10 pizzas</p>
 					</div>
 					<CartHeaders />
 					<CartItems />

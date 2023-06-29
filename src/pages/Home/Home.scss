@@ -33,6 +33,16 @@
 	transform: translateX(-500px);
 	animation: artisanSlide 2s forwards;
 }
+@-moz-keyframes artisanSlide {
+	to {
+		transform: translateX(60px);
+	}
+}
+@-webkit-keyframes artisanSlide {
+	to {
+		transform: translateX(60px);
+	}
+}
 @keyframes artisanSlide {
 	to {
 		transform: translateX(60px);
@@ -42,6 +52,16 @@
 	animation: creationShow 3.5s forwards;
 	animation-delay: 1.5s;
 	opacity: 0;
+}
+@-moz-keyframes creationShow {
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes creationShow {
+	to {
+		opacity: 1;
+	}
 }
 @keyframes creationShow {
 	to {
@@ -82,7 +102,7 @@
 	text-decoration: none;
 }
 .gallery-box {
-	width: 270px;
+	width: 260px;
 	min-height: 350px;
 	padding: 20px;
 	display: flex;
@@ -125,10 +145,13 @@
 	grid-template-columns: repeat(auto-fit, 400px);
 }
 .profile-box {
+	width: 90%;
+	margin: auto;
 	height: auto;
 	padding: 20px;
 	justify-content: center;
 	text-align: center;
+	word-wrap: normal;
 }
 .profile-box img {
 	width: 120px;
@@ -136,18 +159,42 @@
 	margin-bottom: 10px;
 }
 .profile-box p {
-	font-size: 20px;
+	font-size: 18px;
 }
 @media (max-width: 1024px) {
 	.home-showcase {
 		height: 30vh;
 	}
 }
+
+@media (max-width: 860px){
+	.home-gallery .gallery-box:last-child {
+		display: none;
+	}
+	.gallery-box {
+		height: 330px;
+	}
+	.gallery-box img {
+		width: 80%;
+		text-align: center;
+	}
+}
+
 @media (max-width: 767px) {
 	.artisan-box {
 		top: 35%;
 		width: 100%;
 		text-align: center;
+	}
+	@-moz-keyframes artisanSlide {
+		to {
+			transform: translateX(10px);
+		}
+	}
+	@-webkit-keyframes artisanSlide {
+		to {
+			transform: translateX(10px);
+		}
 	}
 	@keyframes artisanSlide {
 		to {
@@ -160,20 +207,6 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		overflow: hidden;
-	}
-	.home-gallery div:last-child {
-		display: none;
-	}
-	.gallery-box {
-		height: 330px;
-	}
-	.gallery-box img {
-		width: 80%;
-		text-align: center;
-	}
-	.profile-gallery {
-		gap: 0;
-		padding: 40px 10px 0 10px;
 	}
 }
 
@@ -195,11 +228,12 @@
 	.home-showcase {
 		height: 50vh;
 	}
+	
 	.home-gallery h1,
 	.profile-gallery h1 {
 		font-size: 25px;
 	}
 	.gallery-box p {
-		font-size: 20px;
+		font-size: 18px;
 	}
 }

@@ -7,9 +7,12 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 	button {
 		min-width: 120px;
-        font-size: 14px;
+		font-size: 14px;
 		background: variables.$main-blue;
 		&:hover {
 			background: variables.$dark-blue;
@@ -17,6 +20,5 @@
 	}
 	h4 {
 		text-align: center;
-		user-select: none;
 	}
 }

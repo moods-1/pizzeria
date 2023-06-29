@@ -15,12 +15,19 @@
 .cart-row {
 	background: #fff;
 	padding: 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 	user-select: none;
 }
-#cart-H1 {
-	font-size: 2.5em;
+.cart-head {
+	h1{
+		font-size: 2.5em;
+	}
+	p {
+		color: #f00;
+	}
 	padding: 10px 0;
-	background: rgba(3, 3, 3, 0.295);
+	background: rgba(3, 3, 3, 0.1);
 }
 .cart-remove-icon {
 	height: auto;
@@ -31,8 +38,6 @@
 }
 .cart-remove-button {
 	display: none;
-	width: 100%;
-	background-color: variables.$main-black;
 	&:hover {
 		background: variables.$main-red;
 	}
@@ -82,7 +87,8 @@
 	height: 120px;
 }
 #cart-qty {
-	padding: 0 4px;
+	padding: 0px 4px;
+	width: 25px;
 }
 .cart-total-box {
 	width: 100vw;
@@ -139,8 +145,10 @@
 	.cart-hr {
 		display: none;
 	}
-	#cart-H1 {
-		font-size: 2em;
+	.cart-head {
+		h1{
+			font-size: 2em;
+		}		
 	}
 	.cart-column-title-box {
 		display: none;
@@ -180,12 +188,15 @@
 	}
 	#cart-pizza-price {
 		grid-area: p;
+		justify-content: space-between;		
 	}
 	#cart-pizza-quantity {
 		grid-area: q;
+		justify-content: space-between;		
 	}
 	#cart-pie-total {
 		grid-area: t;
+		justify-content: space-between;	
 	}
 	#cart-remove-box {
 		grid-area: r;
