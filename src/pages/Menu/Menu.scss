@@ -41,7 +41,8 @@
 	box-shadow: variables.$light-shadow;
 	transition: 300ms ease;
 	.description-box {
-		text-align: left;
+		text-align: center;
+		font-size: 15px;
 		height: 70px;
 	}
 	.menu-image-box {

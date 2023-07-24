@@ -103,21 +103,17 @@
 }
 .gallery-box {
 	width: 260px;
-	min-height: 350px;
+	min-height: 330px;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	text-align: center;
 	border: variables.$light-border;
 	border-radius: 5px;
 	box-shadow: variables.$light-shadow;
 	background: #fff;
 	transition: 300ms ease;
-	.gallery-box-title {
-		font-size: 22px;
-		font-weight: bold;
-	}
 	.gallery-image-box {
 		display: grid;
 		place-items: center;
@@ -129,8 +125,8 @@
 		}
 	}
 	.gallery-box-story {
-		text-align: left;
-		font-size: 18px;
+		text-align: center;
+		font-size: 15px;
 		height: 80px;
 	}
 	&:hover {

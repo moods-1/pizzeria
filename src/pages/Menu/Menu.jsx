@@ -14,7 +14,7 @@ const Menu = () => {
 			<div className='menu-pizzas-box'>
 				{products.map((product) => (
 					<div key={product.id} className='menu-box' id='menu-box1'>
-						<h3>{product.name}</h3>
+						<h4 className='product-title'>{product?.name?.toUpperCase()}</h4>
 						<div className='menu-image-box'>
 							<img src={product.image} alt='pie' />
 						</div>

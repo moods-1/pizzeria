@@ -5,7 +5,7 @@ import Woman from '../../images/womanSmiling.jpg';
 const HomeProfile = () => {
     return (  
         <div className="profile-gallery">
-                <h1>Testimonials</h1>
+                <h1>TESTIMONIALS</h1>
                 <div className="profile-box">
                     <img src={Woman} alt="woman" />
                     <p>

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const HomeGallery = ({ products }) => {
 	return (
 		<div className='home-gallery'>
-			<h1>Favourites</h1>
+			<h1>FAVOURITES</h1>
 			{products.slice(0, 3).map((product) => (
 				<div key={product.id} className='gallery-box'>
-					<p className='gallery-box-title'>{product.name}</p>
+					<h4 className='product-title'>{product?.name}</h4>
 					<Link to='/menu'>
 						<div className='gallery-image-box'>
 							<img src={product.image} alt='pizza' />
